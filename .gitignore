@@ -1,0 +1,9 @@
+*.epp
+/Development/
+/Extensions/
+/Fragments/
+/repos/
+/Support/
+/Tasks/
+/work/
+/Secrets.json
