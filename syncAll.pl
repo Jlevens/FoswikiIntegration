@@ -8,7 +8,6 @@
 
 use File::FindLib 'lib';
 use Setup;
-
 use ReadData;
 
 use Net::GitHub;
@@ -17,9 +16,9 @@ use Path::Tiny;
 my $repoDir = "$scriptDir/repos";
 my %repo;
 
-my $github = $secrets->{github}{token}
-           ? Net::GitHub->new( access_token => $secrets->{github}{token} ) 
-           : Net::GitHub->new( login => $secrets->{github}{login}, pass => $secrets->{github}{pass} );
+my $github = $secrets->{ github }{token}
+           ? Net::GitHub->new( access_token => $secrets->{ github }{token} ) 
+           : Net::GitHub->new( login => $secrets->{ github }{login}, pass => $secrets->{ github }{pass} );
 
 my $search = $github->search;
 my $repos = $github->repos;
@@ -42,23 +41,23 @@ while (1) {
     for my $r (@refs) {
         next if $r->{description} =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
 
-        $repo{ $r->{name} }{ github }{ description } = $r->{ description };
-        $repo{ $r->{name} }{ github }{ clone_url } = $r->{ clone_url };
-        $repo{ $r->{name} }{ github }{ default_branch } = $r->{ default_branch };
-        $repo{ $r->{name} }{ github }{ sha } = '';
+        $repo{ $r->{name} }{ _github }{ description } = $r->{ description };
+        $repo{ $r->{name} }{ _github }{ clone_url } = $r->{ clone_url };
+        $repo{ $r->{name} }{ _github }{ default_branch } = $r->{ default_branch };
+        $repo{ $r->{name} }{ _github }{ sha } = '';
     }
 }
 
 # Rarely (and it's appears to be random) we get a '' commit-id from github, it's usually a lie so we loop round
 # at least twice.
 
-# As each time around we only retrieve the missing {github}{sha}. Therefore, the 2nd (or more) times around
+# As each time around we only retrieve the missing { _github }{sha}. Therefore, the 2nd (or more) times around
 # we will only talk to the github API (which is slow) one or twice, if at all.
 
 for my $repeat (1..2) {
     print "\n\nFetching from github the sha commit-id of all repos: #$repeat\n\n";
     for my $name (sort keys %repo) {
-        next if $repo{ $name }{ github }{ sha } ne '';  # only if we haven't got this sha yet
+        next if $repo{ $name }{ _github }{ sha } ne '';  # only if we haven't got this sha yet
 
         # SMELL: For all foswiki repos {default_branch} is 'master' in principle that could change.
         # The code uses the default_branch as provided by github, but I'm not sure that's enough
@@ -69,13 +68,13 @@ for my $repeat (1..2) {
 
         my $commit;
         eval {
-            $commit = $repos->commit( 'foswiki', $name, $repo{ $name }{ github }{ default_branch } );
+            $commit = $repos->commit( 'foswiki', $name, $repo{ $name }{ _github }{ default_branch } );
         };
         if( $@ ) {
             #print "repos->commit error: '$@'\n";
             $commit->{sha} = 'Empty'; # SMELL: Only error that I know of, so this might be fragile
         }
-        $repo{ $name }{ github }{ sha } = $commit->{sha};
+        $repo{ $name }{ _github }{ sha } = $commit->{sha};
         printf "%-40s %s\n", $name, $commit->{sha};
     }
 }
@@ -86,7 +85,7 @@ chdir($repoDir); # We want to glob leaf names (therefore the repository name) on
 for my $name (glob("*")) {
     next unless -d $name; # Ignore files etc
 
-    my $branch = $repo{ $name }{ github }{ default_branch } || 'master';
+    my $branch = $repo{ $name }{ _github }{ default_branch } || 'master';
     # say "$repoDir/$name/.git";
         
     # Possibly I should read 'HEAD' and infer the branch I need, OTOH maybe master is always the one we need
@@ -94,19 +93,19 @@ for my $name (glob("*")) {
         my $lsha = "$repoDir/$name/.git/refs/heads/$branch";      
         $lsha = -e $lsha ? path($lsha)->slurp : 'Empty';
         chomp($lsha);
-        $repo{ $name }{ 'local' }{ sha } = $lsha // 'Empty';
+        $repo{ $name }{ _local }{ sha } = $lsha // 'Empty';
     }
     else {
-        $repo{ $name }{ 'local' }{ sha } = 'Dir-is-not-a-git-repo';
+        $repo{ $name }{ _local }{ sha } = 'Dir-is-not-a-git-repo';
     }
-    printf "%-40s %s\n", $name, $repo{$name}{local}{sha};
+    printf "%-40s %s\n", $name, $repo{ $name }{ _local }{ sha };
 }
 
 print "\n\nLooking for changes to pull or new repos to clone:\n\n";
 
 for my $name (sort keys %repo) {
-    my $lsha = $repo{$name}{'local'}{sha} || '';
-    my $gsha = $repo{$name}{github}{sha} || '';
+    my $lsha = $repo{$name}{ _local }{sha} || '';
+    my $gsha = $repo{$name}{ _github }{sha} || '';
 
     if( $lsha && $gsha ) {      # Repo already local and on github, so maybe git pull to sync
         next if $gsha eq $lsha; # but only if the commit-ids have changed
@@ -115,9 +114,9 @@ for my $name (sort keys %repo) {
         `git pull --rebase`; # Expectation is that this local repo is *NOT* used for any dev work
     }
     elsif( $gsha ) {
-        printf "clone %-30s %-40s %-40s\n", $name, $gsha, $repo{$name}{github}{clone_url};
+        printf "clone %-30s %-40s %-40s\n", $name, $gsha, $repo{$name}{ _github }{clone_url};
         chdir($repoDir);
-        `git clone $repo{$name}{github}{clone_url}`;
+        `git clone $repo{$name}{ _github }{clone_url}`;
     }
     else {
         printf "Dele? %-30s %-40s %-40s\n", $name, '', $lsha unless $lsha eq 'Dir-is-not-a-git-repo';

@@ -8,7 +8,6 @@
 
 use File::FindLib 'lib';
 use Setup;
-
 use ReadData;
 
 my $repo = readData( "$scriptDir/work/Repo.json" );
@@ -19,7 +18,7 @@ my @distroExtensions = glob("*");
 for my $distroExt ( @distroExtensions ) {
     next if $distroExt =~ m/^DEL_/;
     next if $distroExt !~ m/(Plugin|Contrib|AddOn|Skin)$/;
-    %{$repo->{ $distroExt }} = ( %{$repo->{ distro }}, distro => 1 );
+    %{$repo->{ $distroExt }} = ( %{$repo->{ distro }}, distro => 'distro/' );
 }
 
 dumpData( $repo, "$scriptDir/work/Repo+.json" );

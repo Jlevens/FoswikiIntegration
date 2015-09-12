@@ -8,6 +8,8 @@ BEGIN {
 
 sub readData {
     my ($file, $var) = @_;
+
+    return {} if !-e $file;
     
     if( $file =~ m/\.json$/) {
         use JSON;
@@ -21,16 +23,14 @@ sub readData {
 
     no strict 'vars'; # Allow var-name in Dumped data file to be created (lacks 'my')
     
-    if( -e $file ) {
-        unless (my $return = do $file) {
-            warn "couldn't parse $file: $@" if $@;
-            warn "couldn't do $file: $!"    unless defined $return;
-            warn "couldn't run $file"       unless $return;
-        }
-
-        no strict 'refs';
-        return $$var;
+    unless (my $return = do $file) {
+        warn "couldn't parse $file: $@" if $@;
+        warn "couldn't do $file: $!"    unless defined $return;
+        warn "couldn't run $file"       unless $return;
     }
+
+    no strict 'refs';
+    return $$var;
 }
 
 #my $oldData = path("scriptDir/work/ExtensionsTopics.dat")->slurp_raw;

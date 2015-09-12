@@ -8,15 +8,9 @@
 
 use File::FindLib qw( lib );
 use Setup;
-use SimpleMeta;
 use ReadData;
 
 use Path::Tiny;
-use Digest::MD5 qw(md5_hex);
-use Digest::SHA qw(sha1_hex);
-
-my $form      = readData( "$scriptDir/work/ExtensionForms.json" );
-my $extension = readData( "$scriptDir/work/ExtensionTopics.json" );
 
 my %fragment;
 my %std;
@@ -150,9 +144,10 @@ HERE
 
 sub frag_md5 {
     my ($frag, $ID, $STDXXX) = @_;
-    my $MD5 = md5_hex( $frag );
+    use Digest;
+    my $MD5 = Digest->new('MD5')->add( $frag )->hexdigest;
     $fragment{ $ID }{ $STDXXX || 'XXX' }{ $MD5 } = $frag;
-    return $MD5;
+    return "$ID-" . ($STDXXX || 'XXX') . "-$MD5.txt";
 }
 
 # Add STD fragments to write out later as files for comparison to non-standard versions discovered
@@ -160,116 +155,43 @@ for my $stdID (keys %std) {
     frag_md5( $std{ $stdID }, $stdID, 'STD' );
 }
 
-my %rules = (
-    txt         => {
-        fileExt     => '.txt',
-    },
-    zip         => {
-        fileExt     => '.zip',
-        tests       => { attachFound => 1, metaFound => 1, sha1 => 1, md5 => 1, },
-    },
-    tgz         => {
-        fileExt     => '.tgz',
-        tests       => { attachFound => 1, metaFound => 1, sha1 => 1, md5 => 1, },
-    },
-    installer   => {
-        fileExt     => '.installer',
-        tests       => { attachFound => 1, metaFound => 1, sha1 => 1, md5 => 1, },
-    },
-    sha1        => {
-        fileExt     => '.sha1',
-        tests       => { attachFound => 1, metaFound => 1 },
-        isDigest    => \&sha1_hex, 
-    },
-    md5         => {
-        tests       => { attachFound => 1, metaFound => 1 },
-        isDigest    => \&md5_hex,
-    },
-);
+my %installers;
 
-for my $extName ( sort keys %{$extension} ) {
-    my @errors;
+for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
 
-    next unless $extension->{ $extName }{ Extensions }{ topic }{ '.installer' };
-    next unless $form->{ $extName }{ Extensions }{ topic }{ form } // '' eq 'PackageName';
+    chdir("$scriptDir/$web");
+    my @Items = sort ( path(".")->children( qr/(Contrib|Plugin|AddOn|Skin)_installer\z/ ) );
     
-    say $extName;
-    
-    my $text = path("$scriptDir/Extensions/$extName.txt")->slurp_raw();
-#    my $meta = simpleMeta( $text );
-    my $ext = $extension->{ $extName }{ Extensions };
-    
-    $ext->{ attach } = $form->{ $extName }{ Extensions }{ topic }{ attachments };
-#        {
-#        map { m/\A$ext(.*?)\z/; my $suf = $1; $suf =~ s/^_/\./; $suf => 1; }
-#        grep { /^$ext/; }
-#        keys %{ $meta->{_indices}{FILEATTACHMENT} }
-#        };
+    for my $f ( @Items ) {
+        my ( $topName ) = $f =~ m/((.*?)(Contrib|Plugin|AddOn|Skin))_installer\z/;   
 
-    for my $digest ( grep { $rules{ $_ }->{isDigest}; } keys %rules ) {
-        my @dlines = -e "$scriptDir/Extensions/$ext.$digest" 
-                 ? path("$scriptDir/Extensions/$ext.$digest")->lines( { chomp => 1 } )
-                 : ()
-                 ;
-        $ext->{ $digest } = { '.installer' => '*no_inst*', '.tgz' => '*no.tgz*', '.zip' => '*no.zip*' };
-
-        for my $dline ( @dlines ) {
-            my ($dhex, $file) = split(' ', $dline);
-            next if !defined $dhex; # Can happen with blank lines
-            $file =~ s/_/\./; # _installer to .installer
-            my ($suffix) = $file =~ m{.*?(\..*?)$};
-            $ext->{ digest }{ $digest }{ $suffix } = $dhex;
-        }
-    }
-
-    for my $suffix ( qw(.installer .tgz .zip .md5 .sha1 ) ) {
-        my $file = "$extName$suffix";
-
-        # Attachment found or not Y/N; META:FILEATTACHMENT found Y/N; md5 matches or not 5/x; sha1 matches or not 1/x
-        my $aerrs = '';
-
-        $aerrs .= $ext->{ topic }{ $suffix } eq 'Fetched'
-                ? 'Y' : 'N';
-        $aerrs .= $ext->{ attach }{$suffix}
-                ? 'Y' : 'N';
+        my $installer = "$scriptDir/$web/${topName}_installer";
+        next if !-e $installer;
         
-        if( $suffix =~ m/installer|tgz|zip/ ) {
-            my $fdigest;
-            eval {
-                $fdigest = -e "$scriptDir/Extensions/$file" ? $rules{ $suffix }->isDigest( path("$scriptDir/Extensions/$file")->slurp_raw ) : 'Y';
-            };
-            $fdigest = "@\: $@" if $@;
-            $aerrs .= $ext->{ $fdigest }{ $suffix } // 'X' eq $fdigest
-                    ? 'Y' : 'N';
-        }
-           
-#        push @errors, "$suffix | MD5 Mismatch: .md5=$ext->{$suffix}{$digest} actual=$fdigest" if $ext->{ $suffix }{ $digest } ne $fdigest;
-        print "$suffix: $aerrs\n";
-    }
-    my $installer = "$scriptDir/Extensions/$extName.installer";
-    if( -e $installer ) {
         $installer = path($installer)->slurp_raw;
+        
+        my %install;
         ($installer) = $installer =~ m{ (.*?) ^(1;|__DATA__)$ }mxs; 
 
         $installer =~ s/\A(.*?)$//m;
-        my $shebang = $1;
-        #push @errors, "Shebang '$shebang'" if $shebang ne '#! /usr/bin/env perl';
+        $install{shebang} = $1 if $1 ne "#! /usr/bin/env perl";
 
         $installer =~ s{(\A.*?)(?:^use\ strict;$)}{}msx;
 
         my $openingComments = $1;
         $openingComments =~ s/(2(\d){3}-2(\d){3} .*? )/2004-2015 Foswiki /;
-        push @errors, "OC: $1" if $1 ne '2004-2015 Foswiki ' && $1 ne '2004-2007 Foswiki ';
+        $install{OC}{'(C)Date'} = $1 if $1 ne '2004-2015 Foswiki ' && $1 ne '2004-2007 Foswiki ';
 
-        $openingComments =~ s/$ext/SameNamePlugin/g; # Needs to be before following in case the extension-name ($ext) contains TWiki
-        $openingComments =~ s/NextWiki|TWiki/Foswiki/; # Not treated as an error as it's repeated in the above '2nnn-2nnn' bit
+        $openingComments =~ s/$topName/SameNamePlugin/g; # Needs to be before following in case the extension-name ($ext) contains TWiki
+        $openingComments =~ s/(NextWiki|TWiki)/Foswiki/;
+        $install{OC}{name} = $1 if $1;
         
         if( $openingComments =~ s{(http://wikiring\.com)}{http://c-dot\.co\.uk} ) {
-            push @errors, "OC: $1" if $1 ne 'http://c-dot.co.uk';
+            $install{OC}{link} = $1;
         }
 
         # Because of the fixes applied above, I only expect 1 standard OC, but to trap the unexpected we store away what we find
-        push @errors, "OC: " . frag_md5( $openingComments, 'OC' ) if $openingComments ne $std{ OC };
+        $install{OC}{Fragment} = frag_md5( $openingComments, 'OC' ) if $openingComments ne $std{ OC };
 
         if($installer =~ s{^undef (.*?)(?=^sub preuninstall)}{}ms) {
             my $extractManifest = $1;
@@ -277,26 +199,30 @@ for my $extName ( sort keys %{$extension} ) {
             # Later versions appear to have this line TIDY'ed, no value seeing that as different
             $extractManifest =~ s/\( ?defined \$return ?\)/\( defined \$return \)/g;
 
-            push @errors, "EM: " . frag_md5( $extractManifest, 'EM' ) . ($extractManifest =~ /twiki/i ? ' +TWiki' : '') if $extractManifest ne $std{ EM };
+            $install{EM}{Fragment} = frag_md5( $extractManifest, 'EM' ) if $extractManifest ne $std{ EM };
         }
         else {
-            push @errors, "EM: ''";
+            $install{EM}{notFound} = 1;
         }
 
         $installer =~ s{(^\=pod(.*?)^\=cut$)}{}gms;
         my $pod = $1;
-        $pod =~ s/$ext/SameNamePlugin/g;
-        push @errors, "pod: " . frag_md5( $pod, 'POD' ) if $pod ne $std{ POD }; # In practice, so far, all pods were found to be identical
+        $pod =~ s/$topName/SameNamePlugin/g;
+        $install{POD}{Fragment} = frag_md5( $pod, 'POD' ) if $pod ne $std{ POD }; # In practice, so far, all pods were found to be identical
 
         for my $sub (qw(preinstall postinstall preuninstall postuninstall)) {
             $installer =~ s/^sub $sub \{(.*?)^\}(?=\s*?(?:sub |Foswiki::|TWiki::))//ms;
             if( !$1 ) {
-                push @errors, "$sub: (not-found)";
+                $install{$sub}{nonStd} = 'not-found';
                 next;
             }
             my $subBody = $1;
             $subBody =~ s{^\s*?\#[^\n]*$}{}gm;
-            push @errors, "$sub: " . frag_md5( $subBody, $sub ) if $subBody !~ m/\A\s+\z/ms;
+
+            if( $subBody !~ m/\A\s+\z/ms ) {
+                $install{$sub}{Fragment} = frag_md5( $subBody, $sub );
+                $install{$sub}{Code} = $subBody;
+            }
         }
 
         my $extender = '';
@@ -305,20 +231,17 @@ for my $extName ( sort keys %{$extension} ) {
             $extender = $1;
             $extender =~ s/\n//g;
             $extender =~ s/\s{2,}/ /g;
-            $extender =~ s/$ext/SameNamePlugin/g;
+            $extender =~ s/$topName/SameNamePlugin/g;
         }
-        push @errors, "$extender" if $extender ne "Foswiki::Extender::install( \$PACKAGES_URL, 'SameNamePlugin', 'SameNamePlugin', \@DATA )";
+        $install{Extender} = $extender if $extender ne "Foswiki::Extender::install( \$PACKAGES_URL, 'SameNamePlugin', 'SameNamePlugin', \@DATA )";
                 
         $installer =~ s/^my \$PACKAGES_URL\s*?=\s*+([^\n]*?);$//gms;
-        my $packages_url = $1;
-        push @errors, "Package '$packages_url'" if $packages_url ne "'http://foswiki.org/pub/Extensions'";
-    
+        $install{Package} = $1 if $1 ne "'http://foswiki.org/pub/$web'";
+        
         $installer =~ s/\n{2,}/\n/g;
-        push @errors, "Remnants: " . frag_md5( $installer, 'REM' ) . ($installer =~ /twiki/i ? ' +TWiki' : '') if $installer ne $std{ REM };
-    }
+        $install{REM}{Fragmemt} = frag_md5( $installer, 'REM' ) if $installer ne $std{ REM };
 
-    for my $err (@errors) {
-        say "| $extName | $err |";
+        $installers{ $topName }{ $web }{ install } = \%install if %install;
     }
 }
 
@@ -326,8 +249,11 @@ for my $ID (keys %fragment) {
     for my $STDXXX (keys %{ $fragment{$ID} }) {
         for my $MD5 (keys %{ $fragment{$ID}{ $STDXXX } }) {
             path("$scriptDir/Fragments/$ID-$STDXXX-$MD5.txt")->spew_raw( $fragment{ $ID }{ $STDXXX }{ $MD5 } );
+#            print "$scriptDir/Fragments/$ID-$STDXXX-$MD5.txt  --- $fragment{$ID}{$STDXXX}{$MD5}\n";
         }
     }
 }
+
+dumpData( \%installers, "$scriptDir/work/Installers.json");
 
 exit 0;

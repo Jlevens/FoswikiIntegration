@@ -9,28 +9,17 @@
 use File::FindLib 'lib';
 use Setup;
 use SimpleMeta;
-use Path::Tiny;
-use Sort::Naturally;
-use POSIX 'strftime';
 use ReadData;
+use Rules;
+
+use Path::Tiny;
 use Scalar::Util qw(reftype);
-
-use readData;
-
-my %webs = (
-    Tasks => { formOK => sub { return 1; }, maxText => 500 },
-    Support => { formOK => sub { return 1; }, maxText => 500 },
-    Development => { formOK => sub { return $_[0] eq 'BasicForm' || $_[0] eq ''; }, maxText => 500 },
-    Extensions => { formOK => sub { return 1; }, maxText => 500 },
-    'Extensions/Testing' => { formOK => sub { return 1; }, maxText => 500 },
-    'Extensions/Archived' => { formOK => sub { return 1; }, maxText => 500 },
-);
 
 my %items;
 
-for my $web ( keys %webs ) {
+for my $web ( sort keys %extWebRule ) {
     chdir("$scriptDir/$web");
-    my @Items = nsort ( path(".")->children( qr/(Contrib|Plugin|AddOn|Skin)\.txt\z/ ) );
+    my @Items = path(".")->children( $isExtensionFile );
     
     for my $item (@Items) {
         my $text = path("$item")->slurp_raw;
@@ -41,14 +30,16 @@ for my $web ( keys %webs ) {
             @{ $meta->{FIELD} }
             ;
 
+        my $topName = substr($item, 0, -4);
+        say $topName;
         my %attachment  = ( reftype ( $meta->{FILEATTACHMENT} ) // '' ) eq 'ARRAY' && 0 < @{ $meta->{FILEATTACHMENT} }
-                        ?  map { $_->{name} => ( defined $_->{size} ? $_->{size} : -1 ) }
-                           grep { %{$_} } # Some hashes are inexplicably empty
+                        ?  map { my $n = $_->{name}; $n =~ s/^$topName//; $n => ( defined $_->{size} ? $_->{size} : -1 ) }
+                           grep { %{$_} && $_->{name} =~ m/^$topName(\.sha1|\.md5|\.zip|\.tgz|_installer)$/ } # Some hashes are inexplicably empty
                            @{ $meta->{FILEATTACHMENT} }
                         :  ();
 
         my $form = $meta->{FORM}[0]{name} || '';
-        next unless &{$webs{ $web }->{formOK}}( $form );
+        next unless &{ $extWebRule{ $web }->{ formOK } }( $form );
         
         my $parent = $meta->{TOPICPARENT}[0]{name} || '';
         
@@ -67,19 +58,21 @@ for my $web ( keys %webs ) {
 
         my $ext = substr($item, 0, -4);
         $items{ $ext }{ $web }{ topic } = {
-            form => $form, include => $incl, parent => $parent, size => length( $meta->{_text} )
+            form => $form, include => $incl, parent => $parent, filteredTextsize => length( $meta->{_text} )
         };
         
-        $items{ $ext }{ $web }{ topic }{ text } = $meta->{_text} if length($meta->{_text}) <= $webs{ $web }{ maxText };
-        $items{ $ext }{ $web }{ topic }{ attachments } = \%attachment if %attachment;
+        $items{ $ext }{ $web }{ topic }{ text } = $meta->{_text} if length( $meta->{_text} ) <= $extWebRule{ $web }{ maxText };
+        $items{ $ext }{ $web }{ topic }{ attachment_meta } = \%attachment if %attachment;
         $items{ $ext }{ $web }{ topic }{ fields } = \%field if %field;
-        for (keys %{ $items{ $ext }{ $web }{ topic } } ) {
-            next if $items{ $ext }{ $web }{ topic }{ $_ };
-            delete $items{ $ext }{ $web }{ topic }{ $_ };
-        };
+
+
+#        for (keys %{ $items{ $ext }{ $web }{ topic } } ) {
+#            next if $items{ $ext }{ $web }{ topic }{ $_ };
+#            delete $items{ $ext }{ $web }{ topic }{ $_ };
+#        };
     }        
 }    
 
-dumpData( \%items, "$scriptDir/work/ExtensionForms.json" );
+dumpData( \%items, "$scriptDir/work/Forms.json" );
 
 exit 0;
