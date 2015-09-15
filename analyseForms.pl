@@ -39,12 +39,12 @@ for my $web ( sort keys %extWebRule ) {
                         :  ();
 
         my $form = $meta->{FORM}[0]{name} || '';
-        next unless &{ $extWebRule{ $web }->{ formOK } }( $form );
+#        next unless &{ $extWebRule{ $web }->{ formOK } }( $form );
         
         my $parent = $meta->{TOPICPARENT}[0]{name} || '';
         
         $meta->{_text} =~ s/%INCLUDE\{([^\}]*?)\}%//;
-        my $incl = $1;
+        my $incl = $1 // '';
 
         # We want indication of substantive text and its size
         # So, remove standard bits of noise
@@ -57,11 +57,14 @@ for my $web ( sort keys %extWebRule ) {
         $meta->{_text} = '' if $meta->{_text} =~ m/\A\s*\z/;
 
         my $ext = substr($item, 0, -4);
-        $items{ $ext }{ $web }{ topic } = {
-            form => $form, include => $incl, parent => $parent, filteredTextsize => length( $meta->{_text} )
-        };
         
-        $items{ $ext }{ $web }{ topic }{ text } = $meta->{_text} if length( $meta->{_text} ) <= $extWebRule{ $web }{ maxText };
+        my $textLen = length( $meta->{_text} );
+        $items{ $ext }{ $web }{ topic }{ filteredTextsize } = $textLen;
+        $items{ $ext }{ $web }{ topic }{ text } = $meta->{_text} if $textLen > 0 && $textLen <= $extWebRule{ $web }{ maxText };
+
+        $items{ $ext }{ $web }{ topic }{ parent } = $parent; # if $parent;
+        $items{ $ext }{ $web }{ topic }{ form } = $form; # if $form;
+        $items{ $ext }{ $web }{ topic }{ include } = $incl; # if $incl;
         $items{ $ext }{ $web }{ topic }{ attachment_meta } = \%attachment if %attachment;
         $items{ $ext }{ $web }{ topic }{ fields } = \%field if %field;
 

@@ -9,6 +9,7 @@
 use File::FindLib qw( lib );
 use Setup;
 use ReadData;
+use Rules;
 
 use Path::Tiny;
 
@@ -157,7 +158,8 @@ for my $stdID (keys %std) {
 
 my %installers;
 
-for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
+for my $web ( keys %extWebRule ) {
+    next unless $web =~ m/^Extensions/;
 
     chdir("$scriptDir/$web");
     my @Items = sort ( path(".")->children( qr/(Contrib|Plugin|AddOn|Skin)_installer\z/ ) );
@@ -170,7 +172,7 @@ for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
         
         $installer = path($installer)->slurp_raw;
         
-        my %install;
+        my %install = (); # We always want to know that an installer exists even if there's nothing else worth reporting
         ($installer) = $installer =~ m{ (.*?) ^(1;|__DATA__)$ }mxs; 
 
         $installer =~ s/\A(.*?)$//m;
@@ -241,7 +243,7 @@ for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
         $installer =~ s/\n{2,}/\n/g;
         $install{REM}{Fragmemt} = frag_md5( $installer, 'REM' ) if $installer ne $std{ REM };
 
-        $installers{ $topName }{ $web }{ install } = \%install if %install;
+        $installers{ $topName }{ $web }{ install } = \%install; # if %install;
     }
 }
 

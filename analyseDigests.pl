@@ -16,8 +16,9 @@ use Digest;
 
 my %digests;
 
-for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
-
+for my $web ( keys %extWebRule ) {
+    next unless $web =~ m/^Extensions/;
+    
     chdir("$scriptDir/$web");
     my @Items = sort ( path(".")->children( qr/^(?!!).*?(Contrib|Plugin|AddOn|Skin)(_installer|\.sha1|\.md5|\.zip|\.tgz)\z/ ) );
     
@@ -64,7 +65,7 @@ for my $web ( qw( Extensions Extensions/Testing Extensions/Archived ) ) {
                          :                       $Stored eq 'S'         ? 'S' # Stored missing (digest not in digest-file or no digest-file at all)
                          :                                                'X' # digests found but mismatch
                          ;
-                $digests{ $topName }{ $web }{ Digest }{ $digestable }{ $dt->{digest} }{ Test } = $Test if $Test ne 'M';
+                $digests{ $topName }{ $web }{ Digest }{ $digestable }{ $dt->{digest} }{ Test } = $Test; # if $Test ne 'M';
                 $digests{ $topName }{ $web }{ Digest }{ $digestable }{ $dt->{digest} }{ Calculated } = $Calculated if $Test =~ m/S|X/;
             }            
         }    
