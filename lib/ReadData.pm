@@ -46,7 +46,7 @@ sub backupData {
     my $base = path($file)->basename;
     my $parent = path($file)->parent;
     my @paths = $parent->children( qr/^$base\.\d+\.bak$/ );
-    my @nums = reverse sort map { my ($num) = $_->basename =~ /^$base\.(\d+)\.bak$/; } @paths;
+    my @nums = reverse sort map { my ($num) = $_->basename =~ /^$base\.(\d+)\.bak$/; $num+=0; } @paths;
     my $num = @nums ? $nums[0]+1 : 1;
 
     use File::Copy;

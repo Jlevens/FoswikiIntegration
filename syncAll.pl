@@ -14,69 +14,51 @@ use Net::GitHub;
 use Path::Tiny;
 
 my $repoDir = "$scriptDir/repos";
-my %repo;
 
 my $github = $secrets->{ github }{token}
            ? Net::GitHub->new( access_token => $secrets->{ github }{token} ) 
            : Net::GitHub->new( login => $secrets->{ github }{login}, pass => $secrets->{ github }{pass} );
 
-my $search = $github->search;
 my $repos = $github->repos;
+my @rp = $repos->list_org('foswiki');
 
-my $page = 0;
-while (1) {
-
-    my %data = $search->repositories({
-        q => 'user:foswiki',
-        order => 'desc',
-        per_page => 100,
-        page => ++$page,
-    });
-
-    my @refs = @{ $data{items} };
-    last unless @refs;
-
-    print "Page: $page\n";
-
-    for my $r (@refs) {
-        next if $r->{description} =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
-
-        $repo{ $r->{name} }{ _github }{ description } = $r->{ description };
-        $repo{ $r->{name} }{ _github }{ clone_url } = $r->{ clone_url };
-        $repo{ $r->{name} }{ _github }{ default_branch } = $r->{ default_branch };
-        $repo{ $r->{name} }{ _github }{ sha } = '';
-    }
+while ( $repos->has_next_page ) {
+    push @rp, $repos->next_page;
 }
 
-# Rarely (and it's appears to be random) we get a '' commit-id from github, it's usually a lie so we loop round
-# at least twice.
+my %repo;
+for my $r (@rp) {
+    printf "%-40s %s\n", $r->{name}, $r->{description};
+    next if $r->{description} =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
 
-# As each time around we only retrieve the missing { _github }{sha}. Therefore, the 2nd (or more) times around
-# we will only talk to the github API (which is slow) one or twice, if at all.
+    $repo{ $r->{name} }{ _github }{ description } = $r->{ description };
+    $repo{ $r->{name} }{ _github }{ clone_url } = $r->{ clone_url };
+    $repo{ $r->{name} }{ _github }{ default_branch } = $r->{ default_branch };
+    $repo{ $r->{name} }{ _github }{ sha } = '';
+}
 
-for my $repeat (1..2) {
-    print "\n\nFetching from github the sha commit-id of all repos: #$repeat\n\n";
-    for my $name (sort keys %repo) {
-        next if $repo{ $name }{ _github }{ sha } ne '';  # only if we haven't got this sha yet
+print "\n\nFetching from github the sha commit-id of all repos\n\n";
+for my $name (sort keys %repo) {
+    next if $repo{ $name }{ _github }{ sha } ne '';  # only if we haven't got this sha yet
 
-        # SMELL: For all foswiki repos {default_branch} is 'master' in principle that could change.
-        # The code uses the default_branch as provided by github, but I'm not sure that's enough
-        
-        # A repo may be 'Empty' both on github and locally. It's useful to give these cases a
-        # special commit-id of 'Empty'. As and when the github commit-id becomes a real one
-        # then it will not-match 'Empty' and we will pull in the latest changes
+    # SMELL: For all foswiki repos {default_branch} is 'master' in principle that could change.
+    # The code uses the default_branch as provided by github, but I'm not sure that's enough
+    
+    # A repo may be 'Empty' both on github and locally. It's useful to give these cases a
+    # special commit-id of 'Empty'. As and when the github commit-id becomes a real one
+    # then it will not-match 'Empty' and we will pull in the latest changes
 
-        my $commit;
-        eval {
-            $commit = $repos->commit( 'foswiki', $name, $repo{ $name }{ _github }{ default_branch } );
-        };
-        if( $@ ) {
-            #print "repos->commit error: '$@'\n";
-            $commit->{sha} = 'Empty'; # SMELL: Only error that I know of, so this might be fragile
-        }
-        $repo{ $name }{ _github }{ sha } = $commit->{sha};
-        printf "%-40s %s\n", $name, $commit->{sha};
+    my $commit;
+    eval {
+        $commit = $repos->commit( 'foswiki', $name, $repo{ $name }{ _github }{ default_branch } );
+    };
+    if( $@ ) {
+        print "repos->commit error: '$@'\n";
+        $commit->{sha} = 'Empty'; # SMELL: Only error that I know of, so this might be fragile
     }
+    $repo{ $name }{ _github }{ sha } = $commit->{sha};
+    printf "%-40s %s\n", $name, $commit->{sha};
+#        print Data::Dumper->Dump([ $commit ], [ 'commit' ] ) if !$commit->{sha};
 }
 
 print "\n\nFetching from all local repos directory the sha commit-id:\n\n";

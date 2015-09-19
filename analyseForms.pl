@@ -11,11 +11,14 @@ use Setup;
 use SimpleMeta;
 use ReadData;
 use Rules;
+use ExtensionTable;
 
 use Path::Tiny;
 use Scalar::Util qw(reftype);
 
 my %items;
+
+my %allkeys;
 
 for my $web ( sort keys %extWebRule ) {
     chdir("$scriptDir/$web");
@@ -31,7 +34,7 @@ for my $web ( sort keys %extWebRule ) {
             ;
 
         my $topName = substr($item, 0, -4);
-        say $topName;
+#        say $topName;
         my %attachment  = ( reftype ( $meta->{FILEATTACHMENT} ) // '' ) eq 'ARRAY' && 0 < @{ $meta->{FILEATTACHMENT} }
                         ?  map { my $n = $_->{name}; $n =~ s/^$topName//; $n => ( defined $_->{size} ? $_->{size} : -1 ) }
                            grep { %{$_} && $_->{name} =~ m/^$topName(\.sha1|\.md5|\.zip|\.tgz|_installer)$/ } # Some hashes are inexplicably empty
@@ -68,13 +71,33 @@ for my $web ( sort keys %extWebRule ) {
         $items{ $ext }{ $web }{ topic }{ attachment_meta } = \%attachment if %attachment;
         $items{ $ext }{ $web }{ topic }{ fields } = \%field if %field;
 
+        if( $web =~ m/Extensions/ ) {
+            my $table = ExtensionTable::parse( $meta->{_text} );
+            
+            if( $table && $table->{_text} =~ m/\0</ ) {
+                say "\n\n\n\n\n================= $web/$topName ====================";
+                say "+$table->{_text}" 
+            }
+            for my $k ( keys %{ $table->{_keys} } ) {
+                for my $original ( @{ $table->{_keys}{$k} } ) {
+                    $allkeys{$k}{$original}++;
+                }
+            }
 
-#        for (keys %{ $items{ $ext }{ $web }{ topic } } ) {
-#            next if $items{ $ext }{ $web }{ topic }{ $_ };
-#            delete $items{ $ext }{ $web }{ topic }{ $_ };
-#        };
+            delete $table->{_text};
+            delete $table->{_keys};
+            $items{ $ext }{ $web }{ topic }{ table } = $table if $table;
+        }
     }        
 }    
+
+say "Unique and normalized keys found in all tables";
+for my $k (sort keys %allkeys) {
+    say $k;
+    for my $original ( sort keys %{$allkeys{$k}} ) {
+        say "    $original     $allkeys{$k}{$original}";
+    }
+}   
 
 dumpData( \%items, "$scriptDir/work/Forms.json" );
 

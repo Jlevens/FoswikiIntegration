@@ -182,7 +182,7 @@ for my $web ( keys %extWebRule ) {
 
         my $openingComments = $1;
         $openingComments =~ s/(2(\d){3}-2(\d){3} .*? )/2004-2015 Foswiki /;
-        $install{OC}{'(C)Date'} = $1 if $1 ne '2004-2015 Foswiki ' && $1 ne '2004-2007 Foswiki ';
+        $install{OC}{Date} = $1 if $1 ne '2004-2015 Foswiki '; # && $1 ne '2004-2007 Foswiki ';
 
         $openingComments =~ s/$topName/SameNamePlugin/g; # Needs to be before following in case the extension-name ($ext) contains TWiki
         $openingComments =~ s/(NextWiki|TWiki)/Foswiki/;
@@ -247,6 +247,7 @@ for my $web ( keys %extWebRule ) {
     }
 }
 
+unlink path("$scriptDir/Fragments")->children;
 for my $ID (keys %fragment) {
     for my $STDXXX (keys %{ $fragment{$ID} }) {
         for my $MD5 (keys %{ $fragment{$ID}{ $STDXXX } }) {
