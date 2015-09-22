@@ -21,19 +21,16 @@ my (%items, %allkeys);
 my $topic = readData( "$scriptDir/work/Merged.json" );
 
 my $web = 'Extensions';
+chdir("$scriptDir/distro");
 for my $extName ( sort keys %{$topic} ) {
 
-    my $extr = $topic->{$extName}{_github};
-    next unless $extr; # not in Extensions web
+    my $extr = $topic->{$extName};
+    next unless $extr->{pushed_at}; # not in GitHub
     
-#    next unless ($extr->{topic}{form}//'') eq 'PackageForm';
-#    next unless -e "$scriptDir/$web/${extName}_installer";
-    
-    my $item = "$scriptDir/repos/" . ( $topic->{$extName}{distro} // '' ) . "$extName/data/System/$extName.txt";
+    my $item = "$scriptDir/$extr->{dir}/data/System/$extName.txt";
     unless (-e $item) {
-        $item = "$scriptDir/repos/" . ( $topic->{$extName}{distro} // '' ) . "$extName/data/TWiki/$extName.txt";
+        $item =~ s{/System/}{TWiki};
         $items{ $extName }{ $web }{ topic }{ TWiki } = 1;
-
     }
 
     print "!!!! No Topic Text for $extName\n" unless -e $item;

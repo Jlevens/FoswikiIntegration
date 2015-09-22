@@ -57,9 +57,9 @@ sub backupData {
 }
 
 sub dumpData {
-    my ($ref, $file) = @_;
+    my ($ref, $file, $backup) = @_;
     
-    backupData($file);
+    backupData($file) if ($backup // 1);
 
     open(my $fh, '>', "$file") or die "Failed to open $file\n";
     my $json = JSON->new->pretty->canonical;

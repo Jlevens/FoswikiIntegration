@@ -32,7 +32,7 @@ for my $ext ( sort keys %{ $topic } ) {
     print $topic->{ $ext }{ Support }{ isodate } ? 'S' : '-';
     print $topic->{ $ext }{ Tasks }{ isodate } ? 'T' : '-';
 
-    print $topic->{ $ext }{ _github } ? '  G' : '  -';
+    print $topic->{ $ext }{ pushed_at } ? '  G' : '  -';
 
     print $topic->{ $ext }{ Tasks }{ Item } ?
             (' I' . ($topic->{ $ext }{ Tasks }{ Item }{ open } ? 'o' : '-') . ($topic->{ $ext }{ Tasks }{ Item }{ closed } ? 'c' : '-') )

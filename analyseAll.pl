@@ -86,7 +86,7 @@ sub analyseLiveExtension {
     
     push @{$ae}, { err=>100, major=>'Support Hub', desc=>'Missing'} unless $ext->{ Support }{ isodate };
     push @{$ae}, { err=>100, major=>'Tasks Hub', desc=>'Missing' } unless $ext->{ Tasks }{ isodate };
-    push @{$ae}, { err=>400, major=>'GitHub', desc=>'Missing' } unless $ext->{ _github };
+    push @{$ae}, { err=>400, major=>'GitHub', desc=>'Missing' } unless $ext->{ pushed_at };
     push @{$ae}, { err=>  1, major=>'Extensions/Testing', desc=>'Found'} if $ext->{ 'Extensions/Testing' }{ isodate };
     push @{$ae}, { err=>400, major=>'Extensions/Archived', desc=>'Found' } if $ext->{ 'Extensions/Archived' }{ isodate };
     

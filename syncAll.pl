@@ -12,107 +12,81 @@ use ReadData;
 
 use Net::GitHub;
 use Path::Tiny;
+use POSIX qw(strftime);
 
-my $repoDir = "$scriptDir/repos";
+my $this_run = strftime("%Y-%m-%dT%H:%M:%SZ", gmtime(time)); # Capture this *before* we access github to ensure no time gap between runs
+
+if( ! -d "$scriptDir/distro" ) {
+    printf "Cloning distro - base for everything else\n";
+    chdir($scriptDir);
+    `git clone https://github.com/foswiki/distro.git`;
+}
 
 my $github = $secrets->{ github }{token}
-           ? Net::GitHub->new( access_token => $secrets->{ github }{token} ) 
+           ? Net::GitHub->new( access_token => $secrets->{ github }{token}, version => 3 ) 
            : Net::GitHub->new( login => $secrets->{ github }{login}, pass => $secrets->{ github }{pass} );
 
 my $repos = $github->repos;
+
 my @rp = $repos->list_org('foswiki');
 
+#use Data::Dumper;
+#$Data::Dumper::Indent = 1;
+#$Data::Dumper::Sortkeys = 1;
+#print Data::Dumper->Dump( [ \@rp ], [ 'rp' ] );
+#
 while ( $repos->has_next_page ) {
     push @rp, $repos->next_page;
 }
 
-my %repo;
-for my $r (@rp) {
-    printf "%-40s %s\n", $r->{name}, $r->{description};
-    next if $r->{description} =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
+my @ext = path("$scriptDir/distro")->children( qr/^(?!DEL_)(core|.*?(Plugin|Contrib|Skin|Add[Oo]n))$/ );
+my %repo = map {
+        my $b = path("$_")->basename;
+        $b = 'distro' if $b eq 'core';
+        my $ldir = $b eq 'distro' ? "distro" : "distro/$b";
+        $b => { dir => $ldir }
+    }
+    @ext;
 
-    $repo{ $r->{name} }{ _github }{ description } = $r->{ description };
-    $repo{ $r->{name} }{ _github }{ clone_url } = $r->{ clone_url };
-    $repo{ $r->{name} }{ _github }{ default_branch } = $r->{ default_branch };
-    $repo{ $r->{name} }{ _github }{ sha } = '';
-}
+my $last = readData( "$scriptDir/work/LastRun.json" );
 
-print "\n\nFetching from github the sha commit-id of all repos\n\n";
-for my $name (sort keys %repo) {
-    next if $repo{ $name }{ _github }{ sha } ne '';  # only if we haven't got this sha yet
+print "\nLooking for changes to pull or new repos to clone:\n\n";
 
-    # SMELL: For all foswiki repos {default_branch} is 'master' in principle that could change.
-    # The code uses the default_branch as provided by github, but I'm not sure that's enough
+for my $r ( @rp ) {
+    my ($name, $description, $pushed_at) = @{$r}{ qw( name description pushed_at ) };
     
-    # A repo may be 'Empty' both on github and locally. It's useful to give these cases a
-    # special commit-id of 'Empty'. As and when the github commit-id becomes a real one
-    # then it will not-match 'Empty' and we will pull in the latest changes
+    $description =~ s/\h+/ /g;
+    $pushed_at //= '0000-00-00T00:00:00Z';
+    next unless $name =~ m/^(distro|.*?(Plugin|Contrib|Skin|Add[Oo]n))$/;
+    next if $description =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
 
-    my $commit;
-    eval {
-        $commit = $repos->commit( 'foswiki', $name, $repo{ $name }{ _github }{ default_branch } );
-    };
-    if( $@ ) {
-        print "repos->commit error: '$@'\n";
-        $commit->{sha} = 'Empty'; # SMELL: Only error that I know of, so this might be fragile
+    # To be stored in Json file for reference in later scripts
+    $repo{ $name }{ description } = $description;
+    $repo{ $name }{ pushed_at } = $pushed_at; # Not sure this is needed in later scripts but ...
+
+    if( $pushed_at lt $last->{ pushed_at } ) {
+        printf "%-22s %-9s %-40s %s\n", $pushed_at, 'no change', $name, $description;
+        next;
     }
-    $repo{ $name }{ _github }{ sha } = $commit->{sha};
-    printf "%-40s %s\n", $name, $commit->{sha};
-#        print Data::Dumper->Dump([ $commit ], [ 'commit' ] ) if !$commit->{sha};
+
+    if( $repo{$name}{dir} ) {
+        chdir( $repo{$name}{dir} );
+
+        printf "%-22s %-9s %-40s %s\n", $pushed_at, 'pull', $name, $description;
+        `git remote update 2>&1`;
+        `git pull --rebase 2>&1`; # Expectation is that this local repo is *NOT* used for any dev work
+        next;
+    }
+
+    printf "%-22s %-9s %-40s %s\n", $pushed_at, 'clone', $name, $description;
+    chdir("$scriptDir/distro" . ($name ne 'distro' ? "distro/$name" : '') );
+    `git clone $r->{clone_url} 2>&1`;    
 }
 
-print "\n\nFetching from all local repos directory the sha commit-id:\n\n";
+printf "\n\n%-22s %-9s %-40s %s\n", $this_run, '', 'Timestamp of this run', '';
 
-chdir($repoDir); # We want to glob leaf names (therefore the repository name) only
-for my $name (glob("*")) {
-    next unless -d $name; # Ignore files etc
-
-    my $branch = $repo{ $name }{ _github }{ default_branch } || 'master';
-    # say "$repoDir/$name/.git";
-        
-    # Possibly I should read 'HEAD' and infer the branch I need, OTOH maybe master is always the one we need
-    if( -d "$repoDir/$name/.git" ) {  
-        my $lsha = "$repoDir/$name/.git/refs/heads/$branch";      
-        $lsha = -e $lsha ? path($lsha)->slurp : 'Empty';
-        chomp($lsha);
-        $repo{ $name }{ _local }{ sha } = $lsha // 'Empty';
-    }
-    else {
-        $repo{ $name }{ _local }{ sha } = 'Dir-is-not-a-git-repo';
-    }
-    printf "%-40s %s\n", $name, $repo{ $name }{ _local }{ sha };
-}
-
-print "\n\nLooking for changes to pull or new repos to clone:\n\n";
-
-for my $name (sort keys %repo) {
-    my $lsha = $repo{$name}{ _local }{sha} || '';
-    my $gsha = $repo{$name}{ _github }{sha} || '';
-
-    if( $lsha && $gsha ) {      # Repo already local and on github, so maybe git pull to sync
-        next if $gsha eq $lsha; # but only if the commit-ids have changed
-        printf "pull  %-30s %-40s %-40s\n", $name, $gsha, $lsha;
-        chdir("$repoDir/$name");
-        `git pull --rebase`; # Expectation is that this local repo is *NOT* used for any dev work
-    }
-    elsif( $gsha ) {
-        printf "clone %-30s %-40s %-40s\n", $name, $gsha, $repo{$name}{ _github }{clone_url};
-        chdir($repoDir);
-        `git clone $repo{$name}{ _github }{clone_url}`;
-    }
-    else {
-        printf "Dele? %-30s %-40s %-40s\n", $name, '', $lsha unless $lsha eq 'Dir-is-not-a-git-repo';
-    }
-}
-
-# Logically set-up extensions that are part of distro
-chdir("$scriptDir/repos/distro");
-my @distroExtensions = glob("*");
-for my $distroExt ( @distroExtensions ) {
-    next if $distroExt =~ m/^DEL_/;
-    next if $distroExt !~ m/(Plugin|Contrib|AddOn|Skin)$/;
-    %{$repo{ $distroExt }} = ( %{$repo{ distro }}, distro => 'distro/' );
-}
+$last->{pushed_at} = $this_run;
+dumpData( $last, "$scriptDir/work/LastRun.json" );
 
 dumpData( \%repo, "$scriptDir/work/Repo.json" );
 
