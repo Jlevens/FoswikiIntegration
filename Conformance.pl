@@ -110,14 +110,13 @@ my $debug           = 0;
 # handlers - {token}{module} handler defined by module
 my %data;
 
-sub noRepo { return substr( $_[0], length( "$scriptDir/repos/" ) ); }
+sub noRepo { return substr( $_[0], length( "$scriptDir/" ) ); }
 
 sub analyseConformance {
     my @modules = @_;
     
     if( 0 == @modules ) {
-        push @modules, map { 'distro/' . $_->basename } path("$scriptDir/repos/distro")->children( qr/^(?!DEL_)[^\.]*?$/ );
-        push @modules, map { $_->basename } path("$scriptDir/repos")->children( qr/^(?!distro$)([^\.]*?$)/ );
+        push @modules, map { $_->basename } path("$scriptDir/distro")->children( qr/^(?!DEL_)(core|.*?(Plugin|Contrib|Skin|Add[Oo]n))$/ );
     }
 #    {
 #        local $" = "\n";
@@ -126,7 +125,7 @@ sub analyseConformance {
 
     # Build list of functions in Func.pm
     
-    my $text = path("$scriptDir/repos/distro/core/lib/Foswiki/Func.pm")->slurp_raw;;
+    my $text = path("$scriptDir/distro/core/lib/Foswiki/Func.pm")->slurp_raw;;
     foreach my $line ( split( /\n/, $text ) ) {
         if ( $line =~ /^sub ({^_]\w+)/ ) {
             $data{funcsyms}{$1} = 1;
