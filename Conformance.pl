@@ -293,6 +293,7 @@ sub generateReport {
 sub analyseCode {
     my ( $module, $data ) = @_;
     if ( -d "$scriptDir/$module" ) {
+        say "Hello $module";
         my $iter = path("$scriptDir/$module")->iterator( { recurse => 1 } );
         my @files;
         while ( my $path = $iter->() ) {
