@@ -118,11 +118,6 @@ sub analyseConformance {
     if( 0 == @modules ) {
         push @modules, map { $_->basename } path("$scriptDir/distro")->children( qr/^(?!DEL_)(core|.*?(Plugin|Contrib|Skin|AddOn))$/ );
     }
-    {
-        local $" = "\n";
-        print STDERR "@modules\n";
-        exit 0;
-    }
 
     # Build list of functions in Func.pm
     
