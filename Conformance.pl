@@ -267,7 +267,7 @@ sub generateReport {
     foreach my $module (@sm) {
         my $howbad = $data{howbad}{$module} || 0;
 #        my $omod = $module;
-#        $omod =~ s[$scriptDir/repos/(distro/)?][];
+#        $omod =~ s[$scriptDir/(distro/)?][];
         $conformanceReport .= TR_SHADE( $howbad, $n, TD($module), TD($howbad) );
     }
 
@@ -296,8 +296,8 @@ sub generateReport {
 # Also analyse module for questionable code use.
 sub analyseCode {
     my ( $module, $data ) = @_;
-    if ( -d "$scriptDir/repos/$module" ) {
-        my $iter = path("$scriptDir/repos/$module")->iterator( { recurse => 1 } );
+    if ( -d "$scriptDir/$module" ) {
+        my $iter = path("$scriptDir/$module")->iterator( { recurse => 1 } );
         my @files;
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
@@ -307,7 +307,7 @@ sub analyseCode {
         $data->{howbad}{$module} = 0;
         foreach my $file ( grep( !/\/(test|fixtures)\//, @files ) ) {
 #            $file =~ s/^\.\///o;
-            my $r = $file; # "$scriptDir/repos/$module/$file";
+            my $r = $file; # "$scriptDir/$module/$file";
             my @flines = path($r)->lines_raw;
             my @finds = grep { /Foswiki::/ } @flines;
             my $find;
@@ -386,7 +386,7 @@ sub analyseCode {
         }
     }
     else {
-        warn "Failed to find $scriptDir/repos/$module\n";
+        warn "Failed to find $scriptDir/$module\n";
         undef $data->{howbad}{$module};
     }
 }
