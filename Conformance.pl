@@ -110,7 +110,7 @@ my $debug           = 0;
 # handlers - {token}{module} handler defined by module
 my %data;
 
-sub noRepo { return substr( $_[0], length( "$scriptDir/" ) ); }
+sub noRepo { return substr( $_[0], length( "$scriptDir/distro" ) ); }
 
 sub analyseConformance {
     my @modules = @_;
@@ -262,8 +262,6 @@ sub generateReport {
     my $i  = 0;
     foreach my $module (@sm) {
         my $howbad = $data{howbad}{$module} || 0;
-#        my $omod = $module;
-#        $omod =~ s[$scriptDir/(distro/)?][];
         $conformanceReport .= TR_SHADE( $howbad, $n, TD($module), TD($howbad) );
     }
 
@@ -292,9 +290,8 @@ sub generateReport {
 # Also analyse module for questionable code use.
 sub analyseCode {
     my ( $module, $data ) = @_;
-    if ( -d "$scriptDir/$module" ) {
-        say "Hello $module";
-        my $iter = path("$scriptDir/$module")->iterator( { recurse => 1 } );
+    if ( -d "$scriptDir/distro/$module" ) {
+        my $iter = path("$scriptDir/distro/$module")->iterator( { recurse => 1 } );
         my @files;
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
@@ -303,8 +300,7 @@ sub analyseCode {
         
         $data->{howbad}{$module} = 0;
         foreach my $file ( grep( !/\/(test|fixtures)\//, @files ) ) {
-#            $file =~ s/^\.\///o;
-            my $r = $file; # "$scriptDir/$module/$file";
+            my $r = $file;
             my @flines = path($r)->lines_raw;
             my @finds = grep { /Foswiki::/ } @flines;
             my $find;
@@ -383,7 +379,7 @@ sub analyseCode {
         }
     }
     else {
-        warn "Failed to find $scriptDir/$module\n";
+        warn "Failed to find $scriptDir/distro/$module\n";
         undef $data->{howbad}{$module};
     }
 }
