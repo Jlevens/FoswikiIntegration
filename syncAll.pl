@@ -70,7 +70,7 @@ for my $r ( @rp ) {
     }
 
     if( $repo{$name}{dir} ) {
-        chdir( $repo{$name}{dir} );
+        chdir( "$scriptDir/$repo{$name}{dir}" );
 
         printf "%-22s %-9s %-40s %s\n", $pushed_at, 'pull', $name, $description;
         `git remote update 2>&1`;
@@ -79,7 +79,7 @@ for my $r ( @rp ) {
     }
 
     printf "%-22s %-9s %-40s %s\n", $pushed_at, 'clone', $name, $description;
-    chdir("$scriptDir/distro" . ($name ne 'distro' ? "distro/$name" : '') );
+    chdir( "$scriptDir/distro" );
     `git clone $r->{clone_url} 2>&1`;    
 }
 
