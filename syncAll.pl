@@ -80,7 +80,7 @@ for my $r ( @rp ) {
 
     printf "%-22s %-9s %-40s %s\n", $pushed_at, 'clone', $name, $description;
     chdir( "$scriptDir/distro" );
-    `git clone $r->{clone_url} 2>&1`;    
+    `git clone $r->{clone_url}`;    
 }
 
 printf "\n\n%-22s %-9s %-40s %s\n", $this_run, '', 'Timestamp of this run', '';
