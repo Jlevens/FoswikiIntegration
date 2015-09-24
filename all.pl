@@ -9,11 +9,13 @@
 use File::FindLib 'lib';
 use Setup;
 
+use Path::Tiny;
+
 chdir( $scriptDir );
 
 # syncronise all git repos (even the dead ones!)
 
-`perl syncAll.pl`;
+do_it( 'syncAll' );
 
 
 # syncronized fetch of topics and attachments from following webs that match /(Contrib|Plugin|AddOn|Skin)\z/
@@ -36,18 +38,7 @@ chdir( $scriptDir );
 # download. This list can be used by later scripts to identify these live Extensions in
 # reports
 
-`perl getTopics.pl`;
-
-
-
-# Scan Extension topics for Forms
-#    PackageForm in real extensions
-#    Other forms for consistency checks
-#
-# Creates work/Forms.json
-
-`perl analyseForms.pl`;
-
+do_it( 'getTopics' );
 
 
 # Scan Extension topics for Forms
@@ -56,21 +47,26 @@ chdir( $scriptDir );
 #
 # Creates work/Forms.json
 
-`perl analyseForms.pl`;
+do_it( 'analyseForms' );
 
-`perl analyseItems.pl`;
+do_it( 'analyseItems' );
 
-`perl analyseDigests.pl`;
+do_it( 'analyseDigests' );
 
-`perl analyseInstallers.pl`;
+do_it( 'analyseInstallers' );
 
-`perl mergeJson.pl`;
+do_it( 'mergeJson' );
 
-`perl showSummary.pl`;
+do_it( 'showSummary' );
 
-`perl analyseAll.pl`;
+do_it( 'analyseAll' );
 
 exit 0;
 
-
-
+sub do_it {
+    my ($it) = @_;
+    
+    my $op = `perl $it.pl`;
+    say $op;
+    path("work/$it.txt")->spew_raw( $op );
+}
