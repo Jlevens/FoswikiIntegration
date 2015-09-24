@@ -58,13 +58,13 @@ for my $web ( keys %extWebRule ) {
                     push @{ $manifest{ matches } }, $mf;
                     next;
                 }
-                $manifest{ firstFail } = { mf => $mf, git=>$gitMD5, ext=>$extMDs };
+                $manifest{ firstFail } = { mf => $mf, git=>$gitMD5, ext=>$extMD5 };
                 last;
             }
         }
         $manifest{ notFound } = 1 if !%manifest;
         
-        $builds{ $ext }{ build } = \%manifest;
+        $builds{ $e }{ $web }{ build } = \%manifest;
     }
 }
 
