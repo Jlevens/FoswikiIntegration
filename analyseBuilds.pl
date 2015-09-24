@@ -34,6 +34,7 @@ for my $web ( keys %extWebRule ) {
         my %manifest;
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
+            say "     $base";
             next unless $base eq 'MANIFEST';
             $manifest{ found } = 1;
             my @slurps = path("$path")->lines_raw( { chomp => 1 } );
