@@ -58,7 +58,7 @@ for my $r ( @rp ) {
     $description =~ s/\h+/ /g;
     $pushed_at //= '0000-00-00T00:00:00Z';
     next unless $name =~ m/^(distro|.*?(Plugin|Contrib|Skin|Add[Oo]n))$/;
-    next if $description =~ m/^OBSOLETE:/; # Is this the only field avail for the Foswiki project to control it's processes?
+    next if $description =~ m/^OBSOLETE/; # Is this the only field avail for the Foswiki project to control it's processes?
 
     # To be stored in Json file for reference in later scripts
     $repo{ $name }{ description } = $description;
@@ -73,8 +73,8 @@ for my $r ( @rp ) {
         chdir( "$scriptDir/$repo{$name}{dir}" );
 
         printf "%-22s %-9s %-40s %s\n", $pushed_at, 'pull', $name, $description;
-        `git remote update 2>&1`;
-        `git pull --rebase 2>&1`; # Expectation is that this local repo is *NOT* used for any dev work
+        `git remote update`;
+        `git pull --rebase`; # Expectation is that this local repo is *NOT* used for any dev work
         next;
     }
 
