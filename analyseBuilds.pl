@@ -70,6 +70,6 @@ for my $web ( keys %extWebRule ) {
     }
 }
 
-dumpData( \%builds, 'Builds.json' );
+dumpData( \%builds, "$scriptDir/work/Builds.json" );
 
 exit 0;
