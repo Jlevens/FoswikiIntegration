@@ -29,7 +29,7 @@ for my $web ( keys %extWebRule ) {
         
         say $e;
 
-        my $iter = path("$scriptDir/distro/$e/lib")->iterator( { recurse => 1 } );
+        my $iter = path("$scriptDir/distro/$e")->iterator( { recurse => 1 } );
         
         my %manifest;
         while ( my $path = $iter->() ) {
