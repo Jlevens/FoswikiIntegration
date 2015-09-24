@@ -37,7 +37,7 @@ for my $web ( keys %extWebRule ) {
                 $mf =~ s/^\"//;
                 $mf =~ s/\"$//;
                 next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
-                next if $mf !~ m{^(lib/|data/)};
+#                next if $mf !~ m{^(lib/|data/)};
 
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
@@ -46,7 +46,7 @@ for my $web ( keys %extWebRule ) {
                               ? path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5")
                               : '';
 
-                if( $gitMD5 eq $extMD5 && $gitMD5 ne '' && $extMD5 ne '' ) {
+                if( $gitMD5 ne $extMD5 || $gitMD5 eq '' || $extMD5 eq '' ) {
                     printf "%-40s %-50s %-32s %-32s\n", $e, $mf, $gitMD5, $extMD5;
                 }
 
