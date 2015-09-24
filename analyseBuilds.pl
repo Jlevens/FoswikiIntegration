@@ -22,7 +22,7 @@ for my $web ( keys %extWebRule ) {
     chdir("$scriptDir/$web");
     my @Items = sort ( path(".")->children( qr/^!.*?(Contrib|Plugin|AddOn|Skin)\.tgz\z/ ) );
     
-    for my $f ( @Items ) {
+    for my $f ( @Items[0..9] ) {
         my $e = $f;
         $e =~ s/^!//;
         $e =~ s/\.tgz$//;
@@ -34,7 +34,13 @@ for my $web ( keys %extWebRule ) {
         my %manifest;
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
-            say "     $base";
+
+            my $suffix = $mf =~ m/(?:.*?)\.([^.]*?)\z/;
+            printf "%-10s %s\n", $suffix, $base;
+            $builds{ Suffices }{ $suffix } += 1;
+            next;
+
+#            say "     $base";
             next unless $base eq 'MANIFEST';
             my @slurps = path("$path")->lines_raw( { chomp => 1 } );
             for my $s (@slurps) {
@@ -49,9 +55,6 @@ for my $web ( keys %extWebRule ) {
 #                next;
                 say "          $mf";
                 
-                my $suffix = $mf =~ m/(?:.*?)\.([^.]*?)\z/;
-                $builds{ Suffices }{ $suffix } += 1;
-                next;
                 
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
