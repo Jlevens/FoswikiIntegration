@@ -69,7 +69,7 @@ for my $web ( keys %extWebRule ) {
         $builds{ $e }{ $web }{ build } = \%manifest;
     }
 }
-
+say "\n\nDumping ...";
 dumpData( \%builds, "$scriptDir/work/Builds.json" );
 
 exit 0;
