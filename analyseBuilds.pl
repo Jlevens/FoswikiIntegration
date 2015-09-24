@@ -39,11 +39,18 @@ for my $web ( keys %extWebRule ) {
                 next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
                 next if $mf !~ m{^(lib/|data/)};
 
-                if( -e "$scriptDir/distro/$e/$mf" ) {        
-                    print path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" ;
-                    print path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
-                    say "";
+                my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
+                              ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
+                              : '';
+                my $extMD5 = -e "$scriptDir/Extensions/!$e\.tgz/$mf"
+                              ? path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5")
+                              : '';
+
+                if( $gitMD5 ne $extMD5 || $gitMD5 eq '' && $extMD5 eq '' ) {
+                    printf "%-40s %-50s %-32s %-32s\n", $e, $mf, $gitMD5, $extMD5;
                 }
+
+                              
 #                else {
 #                  say "-- $mf" if !-e "$scriptDir/Extensions/!$e\.tgz/$mf";            
 #                  say "!! $mf" if !-e "$scriptDir/distro/$e/$mf";
