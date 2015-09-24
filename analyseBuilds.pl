@@ -14,6 +14,8 @@ use Rules;
 use Path::Tiny;
 use Digest;
 
+my %builds;
+
 for my $web ( keys %extWebRule ) {
     next unless $web =~ m/^Extensions/;
     
@@ -26,9 +28,12 @@ for my $web ( keys %extWebRule ) {
         $e =~ s/\.tgz$//;
 
         my $iter = path("$scriptDir/distro/$e/lib")->iterator( { recurse => 1 } );
+        
+        my %manifest;
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
             next unless $base eq 'MANIFEST';
+            $manifest{ found } = 1;
             my @slurps = path("$path")->lines_raw( { chomp => 1 } );
             for my $s (@slurps) {
                 next if $s =~ m/^\s*?(#|!)/;
@@ -42,24 +47,27 @@ for my $web ( keys %extWebRule ) {
 #                next;
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
-                              : '';
+                              : 'G';
                 my $extMD5 = -e "$scriptDir/Extensions/!$e\.tgz/$mf"
                               ? path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5")
-                              : '';
-
-                if( $gitMD5 ne $extMD5 || $gitMD5 eq '' || $extMD5 eq '' ) {
-                    printf "%-40s %-50s %-32s %-32s\n", $e, $mf, $gitMD5, $extMD5;
-                }
-
+                              : 'E';
                               
-#                else {
-#                  say "-- $mf" if !-e "$scriptDir/Extensions/!$e\.tgz/$mf";            
-#                  say "!! $mf" if !-e "$scriptDir/distro/$e/$mf";
-#                }
+                
+
+                if( $gitMD5 eq $extMD5 ) {
+                    push @{ $manifest{ matches } }, $mf;
+                    next;
+                }
+                $manifest{ firstFail } = { mf => $mf, git=>$gitMD5, ext=>$extMDs };
+                last;
             }
-            last;
         }
+        $manifest{ notFound } = 1 if !%manifest;
+        
+        $builds{ $ext }{ build } = \%manifest;
     }
 }
+
+dumpData( \%builds, 'Builds.json' );
 
 exit 0;
