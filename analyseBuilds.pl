@@ -50,7 +50,7 @@ for my $web ( keys %extWebRule ) {
                 say "          $mf";
                 
                 my $suffix = $mf =~ m/(?:.*?)\.([^.]*?)\z/;
-                my $builds{ Suffices }{ $suffix } += 1;
+                $builds{ Suffices }{ $suffix } += 1;
                 next;
                 
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
