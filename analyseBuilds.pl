@@ -24,34 +24,32 @@ for my $web ( keys %extWebRule ) {
         my $e = $f;
         $e =~ s/^!//;
         $e =~ s/\.tgz$//;
-        my $text = ''; #sprintf("%-40s", $e);
 
         my $iter = path("$scriptDir/distro/$e/lib")->iterator( { recurse => 1 } );
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
             next unless $base eq 'MANIFEST';
-#            $text .= "    $path\n";
             my @slurps = path("$path")->lines_raw( { chomp => 1 } );
             for my $s (@slurps) {
                 next if $s =~ m/^\s*?(#|!)/;
                 next if $s =~ m/^\A\s*?\z/;
-                my ($mf) = split(' ', $s); # =~ m/^(.*?)\s*?.*?/;
+                my ($mf, $digest) = split(' ', $s); # =~ m/^(.*?)\s*?.*?/;
                 $mf =~ s/^\"//;
                 $mf =~ s/\"$//;
                 next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
                 next if $mf !~ m{^(lib/|data/)};
 
-                if( -e "$scriptDir/distro/$e/$mf" ) {
-                say "!! $mf" if !-e "$scriptDir/distro/$e/$mf";            
-                say path("$scriptDir/distro/$e/$mf")->digest("MD5") if -e "$scriptDir/distro/$e/$mf";
-                say "-- $mf" if !-e "$scriptDir/Extensions/!$e\.tgz/$mf";            
-                say path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
-#                $text .= "$mf\n" if defined $mf;
-#                say "!!$s" if !defined $mf;
+                if( -e "$scriptDir/distro/$e/$mf" ) {        
+                    say path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" . $digest
+                    say path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
+                }
+#                else {
+#                  say "-- $mf" if !-e "$scriptDir/Extensions/!$e\.tgz/$mf";            
+#                  say "!! $mf" if !-e "$scriptDir/distro/$e/$mf";
+#                }
             }
             last;
         }
-#        print $text;
     }
 }
 
