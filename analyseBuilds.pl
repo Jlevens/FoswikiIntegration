@@ -22,7 +22,7 @@ for my $web ( keys %extWebRule ) {
     chdir("$scriptDir/$web");
     my @Items = sort ( path(".")->children( qr/^!.*?(Contrib|Plugin|AddOn|Skin)\.tgz\z/ ) );
     
-    for my $f ( @Items[0..9] ) {
+    for my $f ( @Items ) {
         my $e = $f;
         $e =~ s/^!//;
         $e =~ s/\.tgz$//;
@@ -35,6 +35,7 @@ for my $web ( keys %extWebRule ) {
         while ( my $path = $iter->() ) {
             my $base = $path->basename;
 
+            next if -d $path;
             my ($suffix) = $base =~ m/(?:.*?)\.([^.]*?)\z/;
             printf "%-10s %s\n", $suffix // '--', $base;
             $builds{ Suffices }{ $suffix // '--' } += 1;
