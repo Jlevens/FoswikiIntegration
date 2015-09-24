@@ -26,6 +26,8 @@ for my $web ( keys %extWebRule ) {
         my $e = $f;
         $e =~ s/^!//;
         $e =~ s/\.tgz$//;
+        
+        say $e;
 
         my $iter = path("$scriptDir/distro/$e/lib")->iterator( { recurse => 1 } );
         
@@ -51,8 +53,6 @@ for my $web ( keys %extWebRule ) {
                 my $extMD5 = -e "$scriptDir/Extensions/!$e\.tgz/$mf"
                               ? path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5")
                               : 'E';
-                              
-                
 
                 if( $gitMD5 eq $extMD5 ) {
                     push @{ $manifest{ matches } }, $mf;
