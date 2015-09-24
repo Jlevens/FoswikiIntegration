@@ -46,7 +46,7 @@ for my $web ( keys %extWebRule ) {
                               ? path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5")
                               : '';
 
-                if( $gitMD5 ne $extMD5 || $gitMD5 eq '' && $extMD5 eq '' ) {
+                if( $gitMD5 eq $extMD5 && $gitMD5 ne '' && $extMD5 ne '' ) {
                     printf "%-40s %-50s %-32s %-32s\n", $e, $mf, $gitMD5, $extMD5;
                 }
 
