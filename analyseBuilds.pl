@@ -36,7 +36,6 @@ for my $web ( keys %extWebRule ) {
             my $base = $path->basename;
             say "     $base";
             next unless $base eq 'MANIFEST';
-            $manifest{ found } = 1;
             my @slurps = path("$path")->lines_raw( { chomp => 1 } );
             for my $s (@slurps) {
                 next if $s =~ m/^\s*?(#|!)/;
@@ -65,7 +64,7 @@ for my $web ( keys %extWebRule ) {
             }
         }
         $manifest{ notFound } = 1 if !%manifest;
-        
+        $manifest{ matched } = 1 if !$manifest{ firstFail };
         $builds{ $e }{ $web }{ build } = \%manifest;
     }
 }
