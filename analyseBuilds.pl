@@ -36,8 +36,8 @@ for my $web ( keys %extWebRule ) {
             my $base = $path->basename;
 
             my ($suffix) = $base =~ m/(?:.*?)\.([^.]*?)\z/;
-            printf "%-10s %s\n", $suffix, $base;
-            $builds{ Suffices }{ $suffix } += 1;
+            printf "%-10s %s\n", $suffix // '--', $base;
+            $builds{ Suffices }{ $suffix // '--' } += 1;
             next;
 
 #            say "     $base";
