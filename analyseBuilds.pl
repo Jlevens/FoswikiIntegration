@@ -64,7 +64,7 @@ for my $web ( keys %extWebRule ) {
             }
         }
         $manifest{ notFound } = 1 if !%manifest;
-        $manifest{ matched } = 1 if !$manifest{ firstFail };
+        $manifest{ matched } = 1 if !$manifest{ firstFail } && $manifest{ matches };
         $builds{ $e }{ $web }{ build } = \%manifest;
     }
 }
