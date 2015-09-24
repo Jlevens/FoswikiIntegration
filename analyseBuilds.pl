@@ -33,15 +33,16 @@ for my $web ( keys %extWebRule ) {
             for my $s (@slurps) {
                 next if $s =~ m/^\s*?(#|!)/;
                 next if $s =~ m/^\A\s*?\z/;
-                my ($mf, $digest) = split(' ', $s); # =~ m/^(.*?)\s*?.*?/;
+                my ($mf) = split(' ', $s); # =~ m/^(.*?)\s*?.*?/;
                 $mf =~ s/^\"//;
                 $mf =~ s/\"$//;
                 next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
                 next if $mf !~ m{^(lib/|data/)};
 
                 if( -e "$scriptDir/distro/$e/$mf" ) {        
-                    say path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" . $digest;
-                    say path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
+                    print path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" ;
+                    print path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
+                    say "";
                 }
 #                else {
 #                  say "-- $mf" if !-e "$scriptDir/Extensions/!$e\.tgz/$mf";            
