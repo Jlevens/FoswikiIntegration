@@ -48,6 +48,11 @@ for my $web ( keys %extWebRule ) {
 #                say $mf;
 #                next;
                 say "          $mf";
+                
+                my $suffix = $mf =~ m/(?:.*?)\.([^.]*?)\z/;
+                my $builds{ Suffices }{ $suffix } += 1;
+                next;
+                
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
                               : 'G';
@@ -69,6 +74,10 @@ for my $web ( keys %extWebRule ) {
     }
 }
 say "\n\nDumping ...";
-dumpData( \%builds, "$scriptDir/work/Builds.json" );
+#dumpData( \%builds, "$scriptDir/work/Builds.json" );
+
+for my $k ( sort keys $builds{ Suffices } ) {
+    say "$k   $builds{ Suffices }{ $k }";
+}
 
 exit 0;
