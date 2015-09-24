@@ -48,6 +48,7 @@ for my $web ( keys %extWebRule ) {
 #                next if $mf !~ m{^(lib/|data/)};
 #                say $mf;
 #                next;
+                say "          $mf";
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
                               : 'G';
