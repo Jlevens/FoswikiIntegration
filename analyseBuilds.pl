@@ -40,7 +40,7 @@ for my $web ( keys %extWebRule ) {
                 next if $mf !~ m{^(lib/|data/)};
 
                 if( -e "$scriptDir/distro/$e/$mf" ) {        
-                    say path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" . $digest
+                    say path("$scriptDir/distro/$e/$mf")->digest("MD5") . "--" . $digest;
                     say path("$scriptDir/Extensions/!$e\.tgz/$mf")->digest("MD5") if -e "$scriptDir/Extensions/!$e\.tgz/$mf";
                 }
 #                else {
