@@ -36,9 +36,10 @@ for my $web ( keys %extWebRule ) {
                 my ($mf) = split(' ', $s); # =~ m/^(.*?)\s*?.*?/;
                 $mf =~ s/^\"//;
                 $mf =~ s/\"$//;
-                next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
+#                next if $mf =~ m{^(lib/CPAN|pub/|working/|test/|solr/|locale/)};
 #                next if $mf !~ m{^(lib/|data/)};
-
+                say $mf;
+                next;
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
                               ? path("$scriptDir/distro/$e/$mf")->digest("MD5")
                               : '';
