@@ -22,7 +22,9 @@ chdir("$scriptDir/distro");
 my $iter = path("$scriptDir/distro")->iterator( { recurse => 1 } );
 
 while ( my $path = $iter->() ) {
-    say $path;
+    my $base = $path->basename;
+    my $parent = $path->parent;
+    say $base;
 }
 
 exit 0;
