@@ -25,7 +25,7 @@ while ( my $path = $iter->() ) {
     my $parent = $path->parent;
     next if $parent =~ m{/\.git(/|\z)};
     my $base = $path->basename;
-    printf "%-40s %s", $base, $parent;
+    printf "%-40s %s\n", $base, $parent;
 }
 
 exit 0;
