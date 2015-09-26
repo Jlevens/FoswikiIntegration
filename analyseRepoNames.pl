@@ -24,8 +24,17 @@ my $iter = path("$scriptDir/distro")->iterator( { recurse => 1 } );
 while ( my $path = $iter->() ) {
     my $parent = $path->parent;
     next if $parent =~ m{/\.git(/|\z)};
-    my $base = $path->basename;
+    my $base = lc($path->basename);
+    $items{ $parent }{ $base }++;
     printf "%-40s %s\n", $base, $parent;
+}
+
+say "\n\n";
+
+for my $parent ( sort keys %items ) {
+    for my $base ( sort keys $items{ $parent } ) {
+        printf "%-40s %s\n", $base, $parent if $items{ $parent }{ $base } > 1;
+    }
 }
 
 exit 0;
