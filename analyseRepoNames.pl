@@ -23,13 +23,13 @@ my $iter = path("$scriptDir/distro")->iterator( { recurse => 1 } );
 
 while ( my $path = $iter->() ) {
     my $parent = $path->parent;
-    next if $parent =~ m{/\.git(/|\z)};
+#    next if $parent =~ m{/\.git(/|\z)};
     my $base = lc($path->basename);
     $items{ $parent }{ $base }++;
     printf "%-40s %s\n", $base, $parent;
 }
 
-say "\n\n";
+say "\nHere the list\n";
 
 for my $parent ( sort keys %items ) {
     for my $base ( sort keys $items{ $parent } ) {
