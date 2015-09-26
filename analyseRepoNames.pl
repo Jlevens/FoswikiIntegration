@@ -26,7 +26,7 @@ while ( my $path = $iter->() ) {
 #    next if $parent =~ m{/\.git(/|\z)};
     my $base = lc($path->basename);
     $items{ $parent }{ $base }++;
-    printf "%-40s %s\n", $base, $parent;
+#    printf "%-40s %s\n", $base, $parent;
 }
 
 say "\nHere the list\n";
