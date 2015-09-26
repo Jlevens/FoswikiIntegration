@@ -22,9 +22,10 @@ chdir("$scriptDir/distro");
 my $iter = path("$scriptDir/distro")->iterator( { recurse => 1 } );
 
 while ( my $path = $iter->() ) {
-    my $base = $path->basename;
     my $parent = $path->parent;
-    say $base;
+    next if $parent =~ m{/\.git(/|\z)};
+    my $base = $path->basename;
+    printf "%-40s %s", $base, $parent;
 }
 
 exit 0;
