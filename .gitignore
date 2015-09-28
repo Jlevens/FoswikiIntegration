@@ -1,5 +1,6 @@
 *.epp
 /Development/
+/D2/
 /Extensions/
 /Fragments/
 /distro/
