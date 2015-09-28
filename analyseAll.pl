@@ -81,7 +81,7 @@ exit 0;
 
 sub analyseLiveExtension {
     my ( $name, $ext ) = @_;
-    
+
     my $ae = $analysis{$name}{errors} //= [];
     
     push @{$ae}, { err=>100, major=>'Support Hub', desc=>'Missing'} unless $ext->{ Support }{ isodate };
