@@ -8,15 +8,15 @@ BEGIN {
 
 use English qw( -no_match_vars ) ;
 
-if( $OSNAME eq 'MSWin32' ) {
-    die <<"HERE";
-Not recommended for running under Windows!
-Too many issues regarding case insensitive file names to be certain everything works well - subtle problems lurk.
-Also, CRLF issues may could some of the calculations of Digests between live and freshly built artifacts.
-
-
-HERE
-}
+#if( $OSNAME eq 'MSWin32' ) {
+#    die <<"HERE";
+#Not recommended for running under Windows!
+#Too many issues regarding case insensitive file names to be certain everything works well - subtle problems lurk.
+#Also, CRLF issues may could some of the calculations of Digests between live and freshly built artifacts.
+#
+#
+#HERE
+#}
 
 use Cwd qw(abs_path);
 use File::Basename;
