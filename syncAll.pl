@@ -6,7 +6,6 @@
 # ProjectContributors are listed in the AUTHORS file in the root of
 # the distribution.
 
-
 use File::FindLib 'lib';
 use Setup;
 use ReadData;
