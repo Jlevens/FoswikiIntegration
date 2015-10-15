@@ -8,11 +8,6 @@
 /Tasks/
 /work/
 /Secrets.json
+/lib/Win32/_Inline
 # Symlinks for testing only
-README1
-README2
-README3
-README4
-README5
-# SymlinkDs for testing only
-w
+W32*

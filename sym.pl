@@ -38,16 +38,21 @@ BEGIN {
     sub readlink {
         my ($link) = @_;
 
-        return undef unless -e $link; # SMELL: die instead?
+        return unless -e $link; # SMELL: die instead?
         
         $link = File::Spec->canonpath( realpath($link) );
+        my ( $vol, $path, $file ) = File::Spec->splitpath( $link );
+        my $linkDir = File::Spec->catpath( $vol, $path, '' );
+        say "LD '$linkDir'";
 
-        my $op = `DIR /A:L /N $link*`; # SMELL: get 'File Not Found' in STDERR if $link not a symlink
+        # SMELL: expensive to list whole dir, but asking for specific file via DIR can result in 'File Not Found' on STDERR
+        $ENV{DIRCMD} = ''; # No unexpected DIR switches
+        my $op = `DIR /N $linkDir`;
 #        say "((\n$op))";
-        if( my ($dest) = $op =~ m/<SYMLINKD?> [^[]*? \[ ([^]]*?) \] /x ) {
+        if( my ($dest) = $op =~ m/<SYMLINKD?> \h*? $file \h*? \[ ([^]]*?) \] /x ) {
             return $dest;
         }
-        return undef; # SMELL: die instead?
+        return; # SMELL: die instead?
     }
 }
 
