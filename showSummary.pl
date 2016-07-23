@@ -17,29 +17,29 @@ for my $ext ( sort keys %{ $topic } ) {
 
     next if $ext !~ $isExtension;
     
-    print $topic->{ $ext }{ Extensions } ? 'E' : '-';
-    print $topic->{ $ext }{ Extensions }{ isodate } ? 't' : '-';
-    print "" . ($topic->{ $ext }{ Extensions }{ topic }{ form } // '') eq 'PackageForm' ? 'P' : '-';
-    print $topic->{ $ext }{ Extensions }{ install } ? 'I' : '-';
+    print $topic->{ $ext }{ Extensions } ? 'E' : 'x';
+    print $topic->{ $ext }{ Extensions }{ topic }{ attachment_meta }{ _installer } ? 'I' : 'x';
+    print "" . ($topic->{ $ext }{ Extensions }{ topic }{ form } // '') eq 'PackageForm' ? 'P' : 'x';
+    print $topic->{ $ext }{ Extensions }{ isodate } ? 't' : 'x';
     
-    print $topic->{ $ext }{ 'Extensions/Testing' } ? ' ET' : ' --';
-    print $topic->{ $ext }{ 'Extensions/Testing' }{ isodate } ? 't' : '-';
+    print $topic->{ $ext }{ 'Extensions/Testing' } ? ' ET' : ' xx';
+    print $topic->{ $ext }{ 'Extensions/Testing' }{ isodate } ? 't' : 'x';
 
-    print $topic->{ $ext }{ 'Extensions/Archived' } ? ' EA' : ' --';
-    print $topic->{ $ext }{ 'Extensions/Archived' }{ isodate } ? 't' : '-';
+    print $topic->{ $ext }{ 'Extensions/Archived' } ? ' EA' : ' xx';
+    print $topic->{ $ext }{ 'Extensions/Archived' }{ isodate } ? 't' : 'x';
 
-    print $topic->{ $ext }{ Development }{ isodate } ? '  D' : '  -';
-    print $topic->{ $ext }{ Support }{ isodate } ? 'S' : '-';
-    print $topic->{ $ext }{ Tasks }{ isodate } ? 'T' : '-';
+    print $topic->{ $ext }{ Development }{ isodate } ? '  D' : '  x';
+    print $topic->{ $ext }{ Support }{ isodate } ? 'S' : 'x';
+    print $topic->{ $ext }{ Tasks }{ isodate } ? 'T' : 'x';
 
-    print $topic->{ $ext }{ pushed_at } ? '  G' : '  -';
+    print $topic->{ $ext }{ pushed_at } ? '  G' : '  x';
 
     print $topic->{ $ext }{ Tasks }{ Item } ?
-            (' I' . ($topic->{ $ext }{ Tasks }{ Item }{ open } ? 'o' : '-') . ($topic->{ $ext }{ Tasks }{ Item }{ closed } ? 'c' : '-') )
+            (' I' . ($topic->{ $ext }{ Tasks }{ Item }{ open } ? 'o' : 'x') . ($topic->{ $ext }{ Tasks }{ Item }{ closed } ? 'c' : 'x') )
             : ' ---'
             ;
     print $topic->{ $ext }{ Support }{ Question } ?
-            (' Q' . ($topic->{ $ext }{ Support }{ Question }{ open } ? 'o' : '-') . ($topic->{ $ext }{ Support }{ Question }{ closed } ? 'c' : '-') )
+            (' Q' . ($topic->{ $ext }{ Support }{ Question }{ open } ? 'o' : 'x') . ($topic->{ $ext }{ Support }{ Question }{ closed } ? 'c' : 'x') )
             : ' ---'
             ;
 

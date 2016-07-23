@@ -15,7 +15,8 @@ chdir( $scriptDir );
 
 # syncronise all git repos (even the dead ones!)
 
-do_it( 'syncAll' );
+do_it( 'syncAll' ); #-->> Repo.json
+
 
 
 # syncronized fetch of topics and attachments from following webs that match /(Contrib|Plugin|AddOn|Skin)\z/
@@ -38,28 +39,67 @@ do_it( 'syncAll' );
 # download. This list can be used by later scripts to identify these live Extensions in
 # reports
 
-do_it( 'getTopics' );
+do_it( 'getTopics' ); #-->> Topics.json
 
 
-# Scan Extension topics for Forms
+
+# Scan *Extension* topic and canonicalise then analyse especially Forms but _text, attachments and all other meta
 #    PackageForm in real extensions
 #    Other forms for consistency checks
 #
 # Creates work/Forms.json
 
-do_it( 'analyseForms' );
+do_it( 'analyseForms' ); #-->> Forms.json
 
-do_it( 'analyseItems' );
 
-do_it( 'analyseDigests' );
 
-do_it( 'analyseInstallers' );
+# Analyse ItemNNNN     topics from Tasks web and
+#         QuestionNNNN topics from Support web
+#
+# Cross references back to the Extension it refers to listing all
+# states that are primarily "open" or "closed" the specific states within those and recording for each state
+# the last modified date of that task (allows counting how many are open/closed and assessing if tasks are being dealt with)
 
-do_it( 'mergeJson' );
+do_it( 'analyseItems' ); #-->> Items.json
+
+
+
+# Analyse the digests (md5 and sha1) comparing and contrasting to find differences in .tgz .zip and _installer files
+
+do_it( 'analyseDigests' ); #-->> Digests.json
+
+
+
+# Analyse the installer scripts for inconsistencies and fix up to latest standards
+
+do_it( 'analyseInstallers' ); #-->> Installers.json
+
+
+
+# Combine the above json outputs into one
+#
+# 1st key  is the extension name
+# 2nd key are the web name(s) it is found in
+# nth key  various depending on web
+
+# Therefore, futures scripts can loop thru all extensions one by one and cross check all data
+
+# Crucially the primary key will exist for any reference to something that looks like any extension
+# either in git or f.o candidate webs
+
+do_it( 'mergeJson' ); #-->>Merged.json
+
+
+
+# Simple summary of each extension - needs work though
 
 do_it( 'showSummary' );
 
+
+
 do_it( 'analyseAll' );
+
+
 
 exit 0;
 
@@ -67,6 +107,8 @@ sub do_it {
     my ($it) = @_;
     
     my $op = `perl $it.pl`;
-    say $op;
-    path("work/$it.txt")->spew_raw( $op );
+    if( $op ) {
+        say $op;
+        path("work/$it.txt")->spew_raw( $op );
+    }
 }

@@ -37,9 +37,8 @@ for my $web ( keys %extWebRule ) {
 
             next if -d $path;
             my ($suffix) = $base =~ m/(?:.*?)\.([^.]*?)\z/;
-            printf "%-10s %s\n", $suffix // '--', $base;
+#            printf "%-10s %s\n", $suffix // '--', $base;
             $builds{ Suffices }{ $suffix // '--' } += 1;
-            next;
 
 #            say "     $base";
             next unless $base eq 'MANIFEST';
@@ -54,7 +53,7 @@ for my $web ( keys %extWebRule ) {
 #                next if $mf !~ m{^(lib/|data/)};
 #                say $mf;
 #                next;
-                say "          $mf";
+#                say "!!         $mf";
                 
                 
                 my $gitMD5 = -e "$scriptDir/distro/$e/$mf"
@@ -68,8 +67,8 @@ for my $web ( keys %extWebRule ) {
                     push @{ $manifest{ matches } }, $mf;
                     next;
                 }
-                $manifest{ firstFail } = { mf => $mf, git=>$gitMD5, ext=>$extMD5 };
-                last;
+                push @{ $manifest{ firstFail } }, { mf => $mf, git=>$gitMD5, tgz=>$extMD5 };
+                next;
             }
         }
         $manifest{ notFound } = 1 if !%manifest;
@@ -78,9 +77,9 @@ for my $web ( keys %extWebRule ) {
     }
 }
 say "\n\nDumping ...";
-#dumpData( \%builds, "$scriptDir/work/Builds.json" );
+dumpData( \%builds, "$scriptDir/work/Builds2.json" );
 
-for my $k ( sort keys $builds{ Suffices } ) {
+for my $k ( sort keys %{$builds{ Suffices }} ) {
     say "$k   $builds{ Suffices }{ $k }";
 }
 

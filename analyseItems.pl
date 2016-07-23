@@ -41,6 +41,11 @@ for my $web ( keys %extWebRule ) {
         for my $c (@components) {
             $c =~ s/\s//g;
             next if $c !~ $isExtension;
+            $c =~ s/Trash.Extensions//;
+            say $c;
+            
+            if( $c =~ m/[\.\/]([A-Za-z0-9]*?)$/ ) { $c = $1 }
+            say "-- $c";
             if( $itemState eq 'closed' ) {          
                 $items{ $c }{ $web }{ $type }{ closed }++;
             }

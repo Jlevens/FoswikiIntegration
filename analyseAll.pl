@@ -2,7 +2,7 @@
 #
 # FoswikiContinuousIntegrationContrib
 # Julian Levens
-# Copyright (C) 2015 ProjectContributors. All rights reserved.
+# Copyright (C) 2016 ProjectContributors. All rights reserved.
 # ProjectContributors are listed in the AUTHORS file in the root of
 # the distribution.
 
@@ -107,7 +107,7 @@ sub analyseLiveExtension {
     my $install = $ext->{ Extensions }{ install };
     my @mm = ( major=>'Installer', minor=>'OC' );
     push @{$ae}, { @mm, err=> 5, patch=>'shebang',  desc=>"'$install->{shebang}' not expected '#! /usr/bin/env perl'" }  if $install->{ shebang };
-    push @{$ae}, { @mm, err=>20, patch=>'Date',     desc=>"'$install->{OC}{Date}' not expected '2004-2015 Foswiki '" }   if $install->{ OC }{Date};
+    push @{$ae}, { @mm, err=>20, patch=>'Date',     desc=>"'$install->{OC}{Date}' not expected '2004-2016 Foswiki '" }   if $install->{ OC }{Date};
     push @{$ae}, { @mm, err=>50, patch=>'name',     desc=>"'$install->{OC}{name}' not expected 'Foswiki'" }              if $install->{ OC }{name};
     push @{$ae}, { @mm, err=> 5, patch=>'link',     desc=>"'$install->{OC}{link}' not expected 'http://c-dot.co.uk'" }   if $install->{ OC }{link};
     push @{$ae}, { @mm, err=> 5, patch=>'Fragment', desc=>"'$install->{OC}{Fragment}' not expected 'OC-STD-75f65ab..'" } if $install->{ OC }{Fragment};
