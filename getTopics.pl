@@ -56,7 +56,7 @@ for my $web ( sort keys %extWebRule ) {
             print STDERR "       This is unexpected, please investigate and correct.\n";
             exit 8;
         }
-        
+
 #        push @{ $topics{ $topName } }, $web;
         $topics{ $topName }{ $web }{ isodate } = $isodate;
 
@@ -95,7 +95,7 @@ sub fetchTopicFiles {
     for my $type ( @{ $extWebRule{ $web }{ fetchAttachType } } ) {
         my $at = $attachType{ $type };
 
-        my $uri  = "http://foswiki.org/" . escape( $at->{requestURL}, web => $web, topic => $topic );
+        my $uri  = ($type eq '.txt' ? 'https' : 'http') . "://foswiki.org/" . escape( $at->{requestURL}, web => $web, topic => $topic );
         my $opts = $at->{requestParms} // {};
         my $request = $at->{request};
     
