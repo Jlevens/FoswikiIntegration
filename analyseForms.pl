@@ -93,9 +93,11 @@ for my $web ( sort keys %extWebRule ) {
 
 say "Unique and normalized keys found in all tables";
 for my $k (sort keys %allkeys) {
-    say $k;
+#    say $k;
+    my $ok = $k;
     for my $original ( sort keys %{$allkeys{$k}} ) {
-        say "    $original     $allkeys{$k}{$original}";
+        say "| $ok | $original |  $allkeys{$k}{$original} |";
+        $ok='';
     }
 }   
 

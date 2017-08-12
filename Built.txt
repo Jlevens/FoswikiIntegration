@@ -1,0 +1,1654 @@
+**********************************************************************************************************************************
+AcronymDefinitionsPlugin
+
+**********************************************************************************************************************************
+ActionTrackerPlugin
+
+**********************************************************************************************************************************
+AliasPlugin
+
+**********************************************************************************************************************************
+AntiWikiSpamPlugin
+
+**********************************************************************************************************************************
+ApprovalPlugin
+
+**********************************************************************************************************************************
+AttachContentPlugin
+
+**********************************************************************************************************************************
+AttachLinkPlugin
+
+**********************************************************************************************************************************
+AttachmentFilterPlugin
+
+**********************************************************************************************************************************
+AttachmentListPlugin
+
+**********************************************************************************************************************************
+AttachmentUrlShortcutPlugin
+
+**********************************************************************************************************************************
+AutoCompletePlugin
+
+**********************************************************************************************************************************
+AutoCompletionLibPlugin
+
+**********************************************************************************************************************************
+AutoTemplatePlugin
+
+**********************************************************************************************************************************
+AutoViewTemplatePlugin
+
+**********************************************************************************************************************************
+AvatarPlugin
+
+**********************************************************************************************************************************
+BarcodePlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+BatchUploadPlugin
+WARNING: LINE IO::File,>0,Required
+ IN /Foswiki-ci/distro/BatchUploadPlugin/lib/Foswiki/Plugins/BatchUploadPlugin/DEPENDENCIES IGNORED at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 582, <PF> line 3.
+
+**********************************************************************************************************************************
+BeautifierPlugin
+
+**********************************************************************************************************************************
+BehaviourContrib
+
+**********************************************************************************************************************************
+BibliographyPlugin
+Wide character in print at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 737.
+
+**********************************************************************************************************************************
+BibtexPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+BigBlueButtonPlugin
+
+**********************************************************************************************************************************
+BioKbPlugin
+
+**********************************************************************************************************************************
+BlackListPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+BlogAddOn
+
+**********************************************************************************************************************************
+BlogPlugin
+
+**********************************************************************************************************************************
+BookmakerPlugin
+
+**********************************************************************************************************************************
+BreadCrumbsPlugin
+
+**********************************************************************************************************************************
+BrowserBoosterPlugin
+
+**********************************************************************************************************************************
+BugsContrib
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+BuildContrib
+
+**********************************************************************************************************************************
+CalDAVPlugin
+
+**********************************************************************************************************************************
+CalendarPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+CaptchaPlugin
+
+**********************************************************************************************************************************
+CasLoginContrib
+
+**********************************************************************************************************************************
+CharsetConverterContrib
+
+**********************************************************************************************************************************
+ChartPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+ChecklistPlugin
+
+**********************************************************************************************************************************
+ChecklistTablePlugin
+
+**********************************************************************************************************************************
+ClamAVScanPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+ClassificationPlugin
+WARNING: File pub/Applications/ClassificationApp/CompleteDocumentation/DirectedGraphPlugin_1.png does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 212.
+WARNING: /Foswiki-ci/distro/ClassificationPlugin/pub/Applications/ClassificationApp/CompleteDocumentation/DirectedGraphPlugin_1.png is in MANIFEST, but it doesn't exist
+/Foswiki-ci/distro/ClassificationPlugin/pub/Applications/ClassificationApp/CompleteDocumentation/DirectedGraphPlugin_1.png does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+CommentPlugin
+
+**********************************************************************************************************************************
+CompareRevisionsAddOn
+
+**********************************************************************************************************************************
+ConfigurePlugin
+
+**********************************************************************************************************************************
+ContributorsPlugin
+
+**********************************************************************************************************************************
+ControlWikiWordPlugin
+
+**********************************************************************************************************************************
+CopyContrib
+
+**********************************************************************************************************************************
+CounterPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+CpanContrib
+
+**********************************************************************************************************************************
+CssPlugin
+
+**********************************************************************************************************************************
+DBCacheContrib
+
+**********************************************************************************************************************************
+DBCachePlugin
+
+**********************************************************************************************************************************
+DBConnectorPlugin
+
+**********************************************************************************************************************************
+DBIQueryPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+DBIStoreContrib
+
+**********************************************************************************************************************************
+DatabaseContrib
+
+**********************************************************************************************************************************
+DatabasePlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+DateTimePlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+DbiContrib
+
+**********************************************************************************************************************************
+DebianRepositoryPlugin
+
+**********************************************************************************************************************************
+DebugLogPlugin
+
+**********************************************************************************************************************************
+DelayMacroPlugin
+
+**********************************************************************************************************************************
+DigestPlugin
+
+**********************************************************************************************************************************
+DirectedGraphPlugin
+
+**********************************************************************************************************************************
+DirectedGraphWebMapPlugin
+
+**********************************************************************************************************************************
+DisqusPlugin
+
+**********************************************************************************************************************************
+DistributedServersPlugin
+WARNING: File data/Foswiki/DistributedServersPlugin.txt does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 2.
+WARNING: /Foswiki-ci/distro/DistributedServersPlugin/data/Foswiki/DistributedServersPlugin.txt is in MANIFEST, but it doesn't exist
+/Foswiki-ci/distro/DistributedServersPlugin/data/Foswiki/DistributedServersPlugin.txt does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+DocumentViewerPlugin
+Wide character in print at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 737.
+
+**********************************************************************************************************************************
+DojoToolkitContrib
+
+**********************************************************************************************************************************
+DownloadZipPlugin
+
+**********************************************************************************************************************************
+DpSyntaxHighlighterPlugin
+
+**********************************************************************************************************************************
+DrupalUsersContrib
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+EasyMacroPlugin
+
+**********************************************************************************************************************************
+EasyTimelinePlugin
+Wide character in print at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 737.
+
+**********************************************************************************************************************************
+EditChapterPlugin
+
+**********************************************************************************************************************************
+EditRowPlugin
+
+**********************************************************************************************************************************
+EditSyntaxPlugin
+
+**********************************************************************************************************************************
+EditTablePlugin
+
+**********************************************************************************************************************************
+EidoGoPlugin
+
+**********************************************************************************************************************************
+EmptyPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+ExcelImportExportPlugin
+
+**********************************************************************************************************************************
+ExitPlugin
+
+**********************************************************************************************************************************
+ExpandTopicContentPlugin
+
+**********************************************************************************************************************************
+ExplicitNumberingPlugin
+
+**********************************************************************************************************************************
+ExportCookiePlugin
+
+**********************************************************************************************************************************
+ExtendedWebListPlugin
+
+**********************************************************************************************************************************
+ExtensionsRepositoryContrib
+
+**********************************************************************************************************************************
+ExternalLinkPlugin
+
+**********************************************************************************************************************************
+FSBrowserPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+FamFamFamContrib
+
+**********************************************************************************************************************************
+FamilyTreePlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+FarscrollContrib
+
+**********************************************************************************************************************************
+FastCGIEngineContrib
+
+**********************************************************************************************************************************
+FieldHistoryPlugin
+
+**********************************************************************************************************************************
+FilterPlugin
+
+**********************************************************************************************************************************
+FindElsewherePlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+FirebugLitePlugin
+
+**********************************************************************************************************************************
+FlexFormPlugin
+
+**********************************************************************************************************************************
+FlexPaperPlugin
+
+**********************************************************************************************************************************
+FlexWebListPlugin
+
+**********************************************************************************************************************************
+FlotChartPlugin
+
+**********************************************************************************************************************************
+FlowchartPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+FootNotePlugin
+
+**********************************************************************************************************************************
+ForEachPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+FormFieldListPlugin
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+FormPlugin
+
+**********************************************************************************************************************************
+FormQueryPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+FortunePlugin
+
+**********************************************************************************************************************************
+FoswikiApplicationsContrib
+
+**********************************************************************************************************************************
+FoswikiOrgPlugin
+
+**********************************************************************************************************************************
+FoswikiSiteSkin
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+FoswikirefsPlugin
+
+**********************************************************************************************************************************
+FreeMarkerPlugin
+
+**********************************************************************************************************************************
+FreeMindPlugin
+
+**********************************************************************************************************************************
+FugueIconsContrib
+
+**********************************************************************************************************************************
+FullCalendarPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+GaugePlugin
+
+**********************************************************************************************************************************
+GenPDFAddOn
+
+**********************************************************************************************************************************
+GenPDFPrincePlugin
+
+**********************************************************************************************************************************
+GenPDFWebkitPlugin
+
+**********************************************************************************************************************************
+GeoPlugin
+
+**********************************************************************************************************************************
+GetAWebPlugin
+
+**********************************************************************************************************************************
+GlobalReplacePlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+GluePlugin
+
+**********************************************************************************************************************************
+GnuPlotPlugin
+
+**********************************************************************************************************************************
+GoUptoTocPlugin
+
+**********************************************************************************************************************************
+GoogleAnalyticsPlugin
+
+**********************************************************************************************************************************
+GoogleMapsPlugin
+
+**********************************************************************************************************************************
+HTTPDUserAdminContrib
+
+**********************************************************************************************************************************
+HarvestPlugin
+
+**********************************************************************************************************************************
+HeadlinesPlugin
+
+**********************************************************************************************************************************
+HiddenPatternSidebarSkin
+
+**********************************************************************************************************************************
+HijaxPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+HistoryPlugin
+
+**********************************************************************************************************************************
+HolidaylistPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+HomePagePlugin
+
+**********************************************************************************************************************************
+HoneyPotPlugin
+
+**********************************************************************************************************************************
+HostnamePlugin
+
+**********************************************************************************************************************************
+HttpHeaderPlugin
+
+**********************************************************************************************************************************
+HttpsRedirectPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+HyphenatorContrib
+
+**********************************************************************************************************************************
+ICalPlugin
+
+**********************************************************************************************************************************
+IfDefinedPlugin
+
+**********************************************************************************************************************************
+ImageGalleryPlugin
+
+**********************************************************************************************************************************
+ImagePlugin
+
+**********************************************************************************************************************************
+ImmediateNotifyPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+ImportExportPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+InfiniteScrollContrib
+
+**********************************************************************************************************************************
+InterwikiPlugin
+
+**********************************************************************************************************************************
+IpPlugin
+
+**********************************************************************************************************************************
+IpToUserMappingPlugin
+
+**********************************************************************************************************************************
+JEditableContrib
+
+**********************************************************************************************************************************
+JHotDrawPlugin
+Can't exec "ant": No such file or directory at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 942.
+Failed to ant -f build.xml build: 72057594037927935 at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 943.
+
+**********************************************************************************************************************************
+JQDataTablesPlugin
+
+**********************************************************************************************************************************
+JQFullCalendarPlugin
+
+**********************************************************************************************************************************
+JQGridPlugin
+
+**********************************************************************************************************************************
+JQMomentContrib
+WARNING: File pub/System/JQMomentContrib/lang/af.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 7.
+WARNING: File pub/System/JQMomentContrib/lang/ar.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 10.
+WARNING: File pub/System/JQMomentContrib/lang/ar-ma.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 12.
+WARNING: File pub/System/JQMomentContrib/lang/ar-sa.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 15.
+WARNING: File pub/System/JQMomentContrib/lang/ar-tn.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 18.
+WARNING: File pub/System/JQMomentContrib/lang/az.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 22.
+WARNING: File pub/System/JQMomentContrib/lang/be.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 25.
+WARNING: File pub/System/JQMomentContrib/lang/bg.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 28.
+WARNING: File pub/System/JQMomentContrib/lang/bn.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 31.
+WARNING: File pub/System/JQMomentContrib/lang/bo.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 34.
+WARNING: File pub/System/JQMomentContrib/lang/br.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 37.
+WARNING: File pub/System/JQMomentContrib/lang/bs.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 40.
+WARNING: File pub/System/JQMomentContrib/lang/ca.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 43.
+WARNING: File pub/System/JQMomentContrib/lang/cs.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 46.
+WARNING: File pub/System/JQMomentContrib/lang/cv.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 49.
+WARNING: File pub/System/JQMomentContrib/lang/cy.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 52.
+WARNING: File pub/System/JQMomentContrib/lang/da.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 55.
+WARNING: File pub/System/JQMomentContrib/lang/de-at.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 58.
+WARNING: File pub/System/JQMomentContrib/lang/de.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 61.
+WARNING: File pub/System/JQMomentContrib/lang/el.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 64.
+WARNING: File pub/System/JQMomentContrib/lang/en-au.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 67.
+WARNING: File pub/System/JQMomentContrib/lang/en-ca.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 70.
+WARNING: File pub/System/JQMomentContrib/lang/en-gb.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 73.
+WARNING: File pub/System/JQMomentContrib/lang/eo.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 76.
+WARNING: File pub/System/JQMomentContrib/lang/es.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 79.
+WARNING: File pub/System/JQMomentContrib/lang/et.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 82.
+WARNING: File pub/System/JQMomentContrib/lang/eu.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 85.
+WARNING: File pub/System/JQMomentContrib/lang/fa.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 88.
+WARNING: File pub/System/JQMomentContrib/lang/fi.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 91.
+WARNING: File pub/System/JQMomentContrib/lang/fo.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 94.
+WARNING: File pub/System/JQMomentContrib/lang/fr-ca.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 97.
+WARNING: File pub/System/JQMomentContrib/lang/fr.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 100.
+WARNING: File pub/System/JQMomentContrib/lang/fy.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 103.
+WARNING: File pub/System/JQMomentContrib/lang/gl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 106.
+WARNING: File pub/System/JQMomentContrib/lang/he.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 108.
+WARNING: File pub/System/JQMomentContrib/lang/he.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 109.
+WARNING: File pub/System/JQMomentContrib/lang/hi.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 111.
+WARNING: File pub/System/JQMomentContrib/lang/hi.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 112.
+WARNING: File pub/System/JQMomentContrib/lang/hr.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 114.
+WARNING: File pub/System/JQMomentContrib/lang/hr.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 115.
+WARNING: File pub/System/JQMomentContrib/lang/hu.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 117.
+WARNING: File pub/System/JQMomentContrib/lang/hu.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 118.
+WARNING: File pub/System/JQMomentContrib/lang/hy-am.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 120.
+WARNING: File pub/System/JQMomentContrib/lang/hy-am.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 121.
+WARNING: File pub/System/JQMomentContrib/lang/id.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 123.
+WARNING: File pub/System/JQMomentContrib/lang/id.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 124.
+WARNING: File pub/System/JQMomentContrib/lang/is.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 126.
+WARNING: File pub/System/JQMomentContrib/lang/is.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 127.
+WARNING: File pub/System/JQMomentContrib/lang/it.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 129.
+WARNING: File pub/System/JQMomentContrib/lang/it.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 130.
+WARNING: File pub/System/JQMomentContrib/lang/ja.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 132.
+WARNING: File pub/System/JQMomentContrib/lang/ja.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 133.
+WARNING: File pub/System/JQMomentContrib/lang/jv.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 135.
+WARNING: File pub/System/JQMomentContrib/lang/jv.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 136.
+WARNING: File pub/System/JQMomentContrib/lang/ka.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 138.
+WARNING: File pub/System/JQMomentContrib/lang/ka.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 139.
+WARNING: File pub/System/JQMomentContrib/lang/km.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 141.
+WARNING: File pub/System/JQMomentContrib/lang/km.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 142.
+WARNING: File pub/System/JQMomentContrib/lang/ko.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 144.
+WARNING: File pub/System/JQMomentContrib/lang/ko.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 145.
+WARNING: File pub/System/JQMomentContrib/lang/lb.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 147.
+WARNING: File pub/System/JQMomentContrib/lang/lb.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 148.
+WARNING: File pub/System/JQMomentContrib/lang/lt.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 150.
+WARNING: File pub/System/JQMomentContrib/lang/lt.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 151.
+WARNING: File pub/System/JQMomentContrib/lang/lv.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 153.
+WARNING: File pub/System/JQMomentContrib/lang/lv.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 154.
+WARNING: File pub/System/JQMomentContrib/lang/me.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 157.
+WARNING: File pub/System/JQMomentContrib/lang/me.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 158.
+WARNING: File pub/System/JQMomentContrib/lang/mk.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 160.
+WARNING: File pub/System/JQMomentContrib/lang/mk.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 161.
+WARNING: File pub/System/JQMomentContrib/lang/ml.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 163.
+WARNING: File pub/System/JQMomentContrib/lang/ml.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 164.
+WARNING: File pub/System/JQMomentContrib/lang/mr.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 166.
+WARNING: File pub/System/JQMomentContrib/lang/mr.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 167.
+WARNING: File pub/System/JQMomentContrib/lang/ms.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 169.
+WARNING: File pub/System/JQMomentContrib/lang/ms.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 170.
+WARNING: File pub/System/JQMomentContrib/lang/ms-my.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 171.
+WARNING: File pub/System/JQMomentContrib/lang/ms-my.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 172.
+WARNING: File pub/System/JQMomentContrib/lang/my.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 175.
+WARNING: File pub/System/JQMomentContrib/lang/my.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 176.
+WARNING: File pub/System/JQMomentContrib/lang/nb.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 178.
+WARNING: File pub/System/JQMomentContrib/lang/nb.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 179.
+WARNING: File pub/System/JQMomentContrib/lang/ne.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 181.
+WARNING: File pub/System/JQMomentContrib/lang/ne.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 182.
+WARNING: File pub/System/JQMomentContrib/lang/nl.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 184.
+WARNING: File pub/System/JQMomentContrib/lang/nl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 185.
+WARNING: File pub/System/JQMomentContrib/lang/nn.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 187.
+WARNING: File pub/System/JQMomentContrib/lang/nn.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 188.
+WARNING: File pub/System/JQMomentContrib/lang/pl.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 190.
+WARNING: File pub/System/JQMomentContrib/lang/pl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 191.
+WARNING: File pub/System/JQMomentContrib/lang/pt-br.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 193.
+WARNING: File pub/System/JQMomentContrib/lang/pt-br.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 194.
+WARNING: File pub/System/JQMomentContrib/lang/pt.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 196.
+WARNING: File pub/System/JQMomentContrib/lang/pt.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 197.
+WARNING: File pub/System/JQMomentContrib/lang/ro.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 199.
+WARNING: File pub/System/JQMomentContrib/lang/ro.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 200.
+WARNING: File pub/System/JQMomentContrib/lang/ru.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 202.
+WARNING: File pub/System/JQMomentContrib/lang/ru.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 203.
+WARNING: File pub/System/JQMomentContrib/lang/si.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 205.
+WARNING: File pub/System/JQMomentContrib/lang/si.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 206.
+WARNING: File pub/System/JQMomentContrib/lang/sk.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 208.
+WARNING: File pub/System/JQMomentContrib/lang/sk.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 209.
+WARNING: File pub/System/JQMomentContrib/lang/sl.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 211.
+WARNING: File pub/System/JQMomentContrib/lang/sl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 212.
+WARNING: File pub/System/JQMomentContrib/lang/sq.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 214.
+WARNING: File pub/System/JQMomentContrib/lang/sq.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 215.
+WARNING: File pub/System/JQMomentContrib/lang/sr-cyrl.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 217.
+WARNING: File pub/System/JQMomentContrib/lang/sr-cyrl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 218.
+WARNING: File pub/System/JQMomentContrib/lang/sr.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 220.
+WARNING: File pub/System/JQMomentContrib/lang/sr.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 221.
+WARNING: File pub/System/JQMomentContrib/lang/sv.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 223.
+WARNING: File pub/System/JQMomentContrib/lang/sv.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 224.
+WARNING: File pub/System/JQMomentContrib/lang/ta.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 226.
+WARNING: File pub/System/JQMomentContrib/lang/ta.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 227.
+WARNING: File pub/System/JQMomentContrib/lang/th.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 229.
+WARNING: File pub/System/JQMomentContrib/lang/th.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 230.
+WARNING: File pub/System/JQMomentContrib/lang/tl-ph.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 232.
+WARNING: File pub/System/JQMomentContrib/lang/tl-ph.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 233.
+WARNING: File pub/System/JQMomentContrib/lang/tr.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 235.
+WARNING: File pub/System/JQMomentContrib/lang/tr.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 236.
+WARNING: File pub/System/JQMomentContrib/lang/tzl.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 238.
+WARNING: File pub/System/JQMomentContrib/lang/tzl.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 239.
+WARNING: File pub/System/JQMomentContrib/lang/tzm.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 241.
+WARNING: File pub/System/JQMomentContrib/lang/tzm.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 242.
+WARNING: File pub/System/JQMomentContrib/lang/tzm-latn.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 243.
+WARNING: File pub/System/JQMomentContrib/lang/tzm-latn.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 244.
+WARNING: File pub/System/JQMomentContrib/lang/uk.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 247.
+WARNING: File pub/System/JQMomentContrib/lang/uk.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 248.
+WARNING: File pub/System/JQMomentContrib/lang/uz.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 250.
+WARNING: File pub/System/JQMomentContrib/lang/uz.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 251.
+WARNING: File pub/System/JQMomentContrib/lang/vi.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 253.
+WARNING: File pub/System/JQMomentContrib/lang/vi.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 254.
+WARNING: File pub/System/JQMomentContrib/lang/zh-cn.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 256.
+WARNING: File pub/System/JQMomentContrib/lang/zh-cn.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 257.
+WARNING: File pub/System/JQMomentContrib/lang/zh-tw.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 259.
+WARNING: File pub/System/JQMomentContrib/lang/zh-tw.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 260.
+WARNING: File pub/System/JQMomentContrib/moment.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 263.
+WARNING: File pub/System/JQMomentContrib/moment.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 264.
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/af.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ar.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ar-ma.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ar-sa.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ar-tn.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/az.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/be.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/bg.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/bn.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/bo.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/br.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/bs.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ca.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/cs.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/cv.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/cy.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/da.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/de-at.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/de.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/el.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/en-au.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/en-ca.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/en-gb.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/eo.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/es.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/et.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/eu.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fa.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fi.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fo.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fr-ca.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fr.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/fy.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/gl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/he.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/he.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hi.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hi.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hr.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hr.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hu.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hu.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hy-am.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/hy-am.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/id.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/id.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/is.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/is.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/it.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/it.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ja.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ja.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/jv.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/jv.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ka.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ka.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/km.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/km.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ko.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ko.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lb.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lb.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lt.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lt.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lv.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/lv.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/me.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/me.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/mk.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/mk.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ml.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ml.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/mr.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/mr.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ms.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ms.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ms-my.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ms-my.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/my.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/my.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nb.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nb.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ne.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ne.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nl.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nn.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/nn.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pl.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pt-br.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pt-br.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pt.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/pt.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ro.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ro.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ru.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ru.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/si.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/si.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sk.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sk.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sl.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sq.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sq.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sr-cyrl.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sr-cyrl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sr.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sr.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sv.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/sv.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ta.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/ta.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/th.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/th.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tl-ph.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tl-ph.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tr.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tr.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzl.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzl.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzm.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzm.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzm-latn.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/tzm-latn.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/uk.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/uk.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/uz.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/uz.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/vi.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/vi.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/zh-cn.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/zh-cn.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/zh-tw.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/lang/zh-tw.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/moment.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQMomentContrib/pub/System/JQMomentContrib/moment.js.gz is in MANIFEST, but it doesn't exist
+unterminated double quoted string literal, stopped at /usr/share/perl5/JavaScript/Minifier.pm line 151.
+
+**********************************************************************************************************************************
+JQPrettyPhotoContrib
+
+**********************************************************************************************************************************
+JQSelect2Contrib
+
+**********************************************************************************************************************************
+JQSerialPagerContrib
+
+**********************************************************************************************************************************
+JQTablePlugin
+WARNING: File pub/System/JQTablePlugin/jquery.tablesorter.css does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 8.
+WARNING: File pub/System/JQTablePlugin/jquery.tablesorter.css.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 9.
+WARNING: File pub/System/JQTablePlugin/jquery.tablesorter.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 11.
+WARNING: File pub/System/JQTablePlugin/jquery.tablesorter.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 12.
+WARNING: File pub/System/JQTablePlugin/tables.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 16.
+WARNING: File pub/System/JQTablePlugin/tables.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 17.
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/jquery.tablesorter.css is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/jquery.tablesorter.css.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/jquery.tablesorter.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/jquery.tablesorter.js.gz is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/tables.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQTablePlugin/pub/System/JQTablePlugin/tables.js.gz is in MANIFEST, but it doesn't exist
+unterminated double quoted string literal, stopped at /usr/share/perl5/JavaScript/Minifier.pm line 151.
+
+**********************************************************************************************************************************
+JQTweetContrib
+Wide character in print at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 737.
+
+**********************************************************************************************************************************
+JQTwistyContrib
+
+**********************************************************************************************************************************
+JQueryCompatibilityModePlugin
+
+**********************************************************************************************************************************
+JQueryLibPlugin
+
+**********************************************************************************************************************************
+JQueryMenuSkin
+
+**********************************************************************************************************************************
+JQueryPlugin
+WARNING: File pub/System/JQueryPlugin/jquery-2.0.0.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 279.
+WARNING: File pub/System/JQueryPlugin/plugins/render/jquery.render.js does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 570.
+WARNING: /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.js is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/plugins/render/jquery.render.js is in MANIFEST, but it doesn't exist
+java -jar /Foswiki-ci/distro/JQueryPlugin/tools/yuicompressor.jar --type js /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.uncompressed.js -o /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.js
+
+[ERROR] 4051:32:missing name after . operator
+
+[ERROR] 4090:35:missing name after . operator
+
+[ERROR] 4092:30:Invalid assignment left-hand side.
+
+[ERROR] 4100:12:missing ) after argument list
+
+[ERROR] 4101:8:syntax error
+
+[ERROR] 4102:8:syntax error
+
+[ERROR] 4103:94:missing ; before statement
+
+[ERROR] 4113:4:missing ) in parenthetical
+
+[ERROR] 4114:3:syntax error
+
+[ERROR] 4115:3:syntax error
+
+[ERROR] 4117:10:syntax error
+
+[ERROR] 4118:9:syntax error
+
+[ERROR] 4119:11:syntax error
+
+[ERROR] 4120:3:syntax error
+
+[ERROR] 4122:7:syntax error
+
+[ERROR] 4128:10:invalid return
+
+[ERROR] 4140:10:invalid return
+
+[ERROR] 4145:10:invalid return
+
+[ERROR] 4149:2:syntax error
+
+[ERROR] 4151:12:syntax error
+
+[ERROR] 4152:12:syntax error
+
+[ERROR] 4153:8:syntax error
+
+[ERROR] 4157:4:syntax error
+
+[ERROR] 4159:2:syntax error
+
+[ERROR] 4160:2:syntax error
+
+[ERROR] 4174:39:missing name after . operator
+
+[ERROR] 4174:56:illegal character
+
+[ERROR] 4174:84:unterminated regular expression literal
+
+[ERROR] 4194:1:syntax error
+
+[ERROR] 8755:1:syntax error
+
+[ERROR] 1:0:Compilation produced 30 syntax errors.
+org.mozilla.javascript.EvaluatorException: Compilation produced 30 syntax errors.
+	at com.yahoo.platform.yui.compressor.YUICompressor$1.runtimeError(YUICompressor.java:135)
+	at org.mozilla.javascript.Parser.parse(Parser.java:410)
+	at org.mozilla.javascript.Parser.parse(Parser.java:355)
+	at com.yahoo.platform.yui.compressor.JavaScriptCompressor.parse(JavaScriptCompressor.java:312)
+	at com.yahoo.platform.yui.compressor.JavaScriptCompressor.<init>(JavaScriptCompressor.java:533)
+	at com.yahoo.platform.yui.compressor.YUICompressor.main(YUICompressor.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.yahoo.platform.yui.compressor.Bootstrap.main(Bootstrap.java:20)
+Generated /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.js from /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.uncompressed.js
+java -jar /Foswiki-ci/distro/JQueryPlugin/tools/yuicompressor.jar --type js /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/plugins/render/jquery.render.uncompressed.js -o /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/plugins/render/jquery.render.js
+
+[ERROR] 112:11:identifier is a reserved word
+
+[ERROR] 1:0:Compilation produced 1 syntax errors.
+org.mozilla.javascript.EvaluatorException: Compilation produced 1 syntax errors.
+	at com.yahoo.platform.yui.compressor.YUICompressor$1.runtimeError(YUICompressor.java:135)
+	at org.mozilla.javascript.Parser.parse(Parser.java:410)
+	at org.mozilla.javascript.Parser.parse(Parser.java:355)
+	at com.yahoo.platform.yui.compressor.JavaScriptCompressor.parse(JavaScriptCompressor.java:312)
+	at com.yahoo.platform.yui.compressor.JavaScriptCompressor.<init>(JavaScriptCompressor.java:533)
+	at com.yahoo.platform.yui.compressor.YUICompressor.main(YUICompressor.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.yahoo.platform.yui.compressor.Bootstrap.main(Bootstrap.java:20)
+Generated /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/plugins/render/jquery.render.js from /Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/plugins/render/jquery.render.uncompressed.js
+/Foswiki-ci/distro/JQueryPlugin/pub/System/JQueryPlugin/jquery-2.0.0.js does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+JSCalendarContrib
+
+**********************************************************************************************************************************
+JSPopupPlugin
+
+**********************************************************************************************************************************
+JSTreeContrib
+
+**********************************************************************************************************************************
+JSUnitContrib
+
+**********************************************************************************************************************************
+JasmineBddContrib
+
+**********************************************************************************************************************************
+JoomlaUsersContrib
+
+**********************************************************************************************************************************
+JsonRpcContrib
+
+**********************************************************************************************************************************
+KinoSearchContrib
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+KinoSearchPlugin
+
+**********************************************************************************************************************************
+LatexModePlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+LazyLoadPlugin
+
+**********************************************************************************************************************************
+LdapContrib
+
+**********************************************************************************************************************************
+LdapGuiPlugin
+
+**********************************************************************************************************************************
+LdapNgPlugin
+
+**********************************************************************************************************************************
+LightboxPlugin
+
+**********************************************************************************************************************************
+LinkOptionsPlugin
+
+**********************************************************************************************************************************
+LinkedInPlugin
+
+**********************************************************************************************************************************
+ListMeUpPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+ListyPlugin
+
+**********************************************************************************************************************************
+LocalCityTimePlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+LocalTimePlugin
+
+**********************************************************************************************************************************
+LoginNameAliasesPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+MailInContrib
+
+**********************************************************************************************************************************
+MailerContrib
+
+**********************************************************************************************************************************
+MathModePlugin
+
+**********************************************************************************************************************************
+MediaElementPlugin
+
+**********************************************************************************************************************************
+MediaPlugin
+
+**********************************************************************************************************************************
+MediaWikiTablePlugin
+
+**********************************************************************************************************************************
+MediaWikiToFoswikiContrib
+
+**********************************************************************************************************************************
+MeetingBingoPlugin
+
+**********************************************************************************************************************************
+MenuListPlugin
+
+**********************************************************************************************************************************
+MetaCommentPlugin
+
+**********************************************************************************************************************************
+MetaDataPlugin
+
+**********************************************************************************************************************************
+MetaWorkflowPlugin
+
+**********************************************************************************************************************************
+MicroformatsPlugin
+
+**********************************************************************************************************************************
+MimeIconPlugin
+
+**********************************************************************************************************************************
+MirrorWebPlugin
+
+**********************************************************************************************************************************
+ModPerlEngineContrib
+
+**********************************************************************************************************************************
+ModifyLoginPlugin
+
+**********************************************************************************************************************************
+MoreFormfieldsContrib
+
+**********************************************************************************************************************************
+MoreFormfieldsPlugin
+
+**********************************************************************************************************************************
+MoveableTypeSkin
+
+**********************************************************************************************************************************
+MsOfficeAttachmentsAsHTMLPlugin
+WARNING: LINE wvHTML IN /Foswiki-ci/distro/MsOfficeAttachmentsAsHTMLPlugin/lib/Foswiki/Plugins/MsOfficeAttachmentsAsHTMLPlugin/DEPENDENCIES IGNORED at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 582, <PF> line 2.
+
+**********************************************************************************************************************************
+MultiLingualPlugin
+
+**********************************************************************************************************************************
+MultiSearchPlugin
+
+**********************************************************************************************************************************
+MultiTopicSavePlugin
+
+**********************************************************************************************************************************
+NTLMEmailAuthContrib
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+NatEditPlugin
+
+**********************************************************************************************************************************
+NatSkin
+
+**********************************************************************************************************************************
+NatSkinPlugin
+
+**********************************************************************************************************************************
+NativeSearchContrib
+
+**********************************************************************************************************************************
+NewUserPlugin
+
+**********************************************************************************************************************************
+NotificationPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+OEmbedPlugin
+WARNING: File pub/System/OEmbedPlugin/vimeo.js.gz does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 17.
+WARNING: /Foswiki-ci/distro/OEmbedPlugin/pub/System/OEmbedPlugin/vimeo.js.gz is in MANIFEST, but it doesn't exist
+/Foswiki-ci/distro/OEmbedPlugin/pub/System/OEmbedPlugin/vimeo.js.gz does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+ObjectPlugin
+
+**********************************************************************************************************************************
+OpenSourceProjectInAWebContrib
+Use of uninitialized value in concatenation (.) or string at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/Targets/release.pm line 33.
+
+**********************************************************************************************************************************
+OrphansPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+PageOptimizerPlugin
+
+**********************************************************************************************************************************
+PasswdUserContrib
+
+**********************************************************************************************************************************
+PatchFoswikiContrib
+
+**********************************************************************************************************************************
+PatchItem12225Contrib
+
+**********************************************************************************************************************************
+PatchItem12285Contrib
+
+**********************************************************************************************************************************
+PatchItem12391Contrib
+
+**********************************************************************************************************************************
+PatternSkin
+
+**********************************************************************************************************************************
+PdfPlugin
+
+**********************************************************************************************************************************
+PerforcePlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+PerlPlugin
+
+**********************************************************************************************************************************
+PermLinkPlugin
+
+**********************************************************************************************************************************
+PersonalInfoAddOn
+
+**********************************************************************************************************************************
+PhpBB3UsersContrib
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+PhyloWidgetPlugin
+
+**********************************************************************************************************************************
+PiwikPlugin
+
+**********************************************************************************************************************************
+PlainFileStoreContrib
+
+**********************************************************************************************************************************
+PreferencesPlugin
+
+**********************************************************************************************************************************
+PrefsCachePlugin
+
+**********************************************************************************************************************************
+PubLinkFixupPlugin
+
+**********************************************************************************************************************************
+PublishPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+QuickMenuSkin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+RCSStoreContrib
+
+**********************************************************************************************************************************
+RackPlannerPlugin
+
+**********************************************************************************************************************************
+RandomTopicPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+RatingContrib
+
+**********************************************************************************************************************************
+RedDotPlugin
+
+**********************************************************************************************************************************
+RedirectPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+RegexCacheSearchPlugin
+
+**********************************************************************************************************************************
+RemoveTrashPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+RenderFormPlugin
+
+**********************************************************************************************************************************
+RenderListPlugin
+
+**********************************************************************************************************************************
+RenderPlugin
+
+**********************************************************************************************************************************
+RenderTableDataPlugin
+
+**********************************************************************************************************************************
+RevCommentPlugin
+
+**********************************************************************************************************************************
+RevisionLinkPlugin
+
+**********************************************************************************************************************************
+RtfContrib
+
+**********************************************************************************************************************************
+SafeWikiPlugin
+
+**********************************************************************************************************************************
+SendEmailPlugin
+
+**********************************************************************************************************************************
+SetFormValuesPlugin
+
+**********************************************************************************************************************************
+SetSkinByCookiePlugin
+
+**********************************************************************************************************************************
+SetTopicValuesPlugin
+
+**********************************************************************************************************************************
+SetVariablePlugin
+
+**********************************************************************************************************************************
+SignaturePlugin
+
+**********************************************************************************************************************************
+SimpleFTPPlugin
+
+**********************************************************************************************************************************
+SkillsPlugin
+
+**********************************************************************************************************************************
+SlideShowPlugin
+
+**********************************************************************************************************************************
+SmartEditContrib
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+SmartWordBreakPlugin
+
+**********************************************************************************************************************************
+SmiliesPlugin
+
+**********************************************************************************************************************************
+SnazzyRoundedCornersContrib
+
+**********************************************************************************************************************************
+SoapClientPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+SoapPlugin
+
+**********************************************************************************************************************************
+SocialBookmarkingAddOn
+
+**********************************************************************************************************************************
+SoftSkin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+SolrPlugin
+
+**********************************************************************************************************************************
+SpacedWikiWordPlugin
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+SpreadSheetPlugin
+
+**********************************************************************************************************************************
+SqlPlugin
+
+**********************************************************************************************************************************
+StringifierContrib
+
+**********************************************************************************************************************************
+SubscribePlugin
+
+**********************************************************************************************************************************
+SyntaxHighlightingPlugin
+
+**********************************************************************************************************************************
+TWikiCompatibilityPlugin
+
+**********************************************************************************************************************************
+TablePlugin
+
+**********************************************************************************************************************************
+TableTmplPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+TablesContrib
+
+**********************************************************************************************************************************
+TagCloudPlugin
+
+**********************************************************************************************************************************
+TagMePlugin
+
+**********************************************************************************************************************************
+TagsPlugin
+WARNING: File data/System/TagsPluginTagRename.txt does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 14.
+WARNING: File data/System/TagsPluginTagMerge.txt does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 15.
+WARNING: File locale/TagsPlugin.pot does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 46.
+WARNING: File locale/TagsPlugin.de.po does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 47.
+WARNING: /Foswiki-ci/distro/TagsPlugin/data/System/TagsPluginTagRename.txt is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/TagsPlugin/data/System/TagsPluginTagMerge.txt is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/TagsPlugin/locale/TagsPlugin.pot is in MANIFEST, but it doesn't exist
+WARNING: /Foswiki-ci/distro/TagsPlugin/locale/TagsPlugin.de.po is in MANIFEST, but it doesn't exist
+/Foswiki-ci/distro/TagsPlugin/data/System/TagsPluginTagRename.txt does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+TalkContrib
+
+**********************************************************************************************************************************
+TaskManagementContrib
+
+**********************************************************************************************************************************
+ThumbnailPlugin
+
+**********************************************************************************************************************************
+TimeCalcPlugin
+
+**********************************************************************************************************************************
+TimeSincePlugin
+
+**********************************************************************************************************************************
+TimeTablePlugin
+
+**********************************************************************************************************************************
+TimelinePlugin
+
+**********************************************************************************************************************************
+TinyMCEPlugin
+
+**********************************************************************************************************************************
+TipsContrib
+
+**********************************************************************************************************************************
+TocPlugin
+
+**********************************************************************************************************************************
+ToolTipPlugin
+Wide character in print at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 737.
+
+**********************************************************************************************************************************
+TopSecretPlugin
+
+**********************************************************************************************************************************
+TopicClassificationAddOn
+
+**********************************************************************************************************************************
+TopicCountPlugin
+
+**********************************************************************************************************************************
+TopicCreatePlugin
+
+**********************************************************************************************************************************
+TopicDataHelperPlugin
+
+**********************************************************************************************************************************
+TopicInteractionPlugin
+
+**********************************************************************************************************************************
+TopicListPlugin
+
+**********************************************************************************************************************************
+TopicLockPlugin
+
+**********************************************************************************************************************************
+TopicNameValidationPlugin
+
+**********************************************************************************************************************************
+TopicSpecificNavigationPlugin
+
+**********************************************************************************************************************************
+TopicTranslationsPlugin
+
+**********************************************************************************************************************************
+TopicUserMappingContrib
+
+**********************************************************************************************************************************
+TrashPlugin
+
+**********************************************************************************************************************************
+TreeBrowserPlugin
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+TreePlugin
+
+**********************************************************************************************************************************
+TweetOnSavePlugin
+
+**********************************************************************************************************************************
+TwistyPlugin
+
+**********************************************************************************************************************************
+TypographyPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+UnitTestContrib
+
+**********************************************************************************************************************************
+UnixUsersContrib
+
+**********************************************************************************************************************************
+UpdateAttachmentsPlugin
+WARNING: no Copyright set in the PackageForm.
+WARNING: no License set in the PackageForm.
+
+**********************************************************************************************************************************
+UpdateInfoPlugin
+WARNING: no Copyright set in the PackageForm.
+
+**********************************************************************************************************************************
+UpdatesPlugin
+
+**********************************************************************************************************************************
+UploadPlugin
+
+**********************************************************************************************************************************
+UrlEventHandlerPlugin
+
+**********************************************************************************************************************************
+UserInfoPlugin
+
+**********************************************************************************************************************************
+ValidateUrlsPlugin
+
+**********************************************************************************************************************************
+VarCachePlugin
+WARNING: File data/System/VarVARCACHE.txt does not exist on disk! at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/BuildContrib/BaseBuild.pm line 172, <$pf> line 4.
+WARNING: /Foswiki-ci/distro/VarCachePlugin/data/System/VarVARCACHE.txt is in MANIFEST, but it doesn't exist
+/Foswiki-ci/distro/VarCachePlugin/data/System/VarVARCACHE.txt does not exist at /Foswiki-ci/distro/core/lib/Foswiki/Contrib/Build.pm line 1058.
+
+**********************************************************************************************************************************
+VirtualHostingContrib
+
+**********************************************************************************************************************************
+VotePlugin
+
+**********************************************************************************************************************************
+WebAutoIncPlugin
+
+**********************************************************************************************************************************
+WebDAVContrib
+
+**********************************************************************************************************************************
+WebLinkPlugin
+
+**********************************************************************************************************************************
+WebPermissionsPlugin
+
+**********************************************************************************************************************************
+WidgetsSkin
+
+**********************************************************************************************************************************
+WikiAppInstallerPlugin
+
+**********************************************************************************************************************************
+WikiDrawPlugin
+
+**********************************************************************************************************************************
+WikiWorkbenchContrib
+
+**********************************************************************************************************************************
+WordPressPlugin
+
+**********************************************************************************************************************************
+WorkflowPlugin
+
+**********************************************************************************************************************************
+WysiwygPlugin
+
+**********************************************************************************************************************************
+X509UserPlugin
+
+**********************************************************************************************************************************
+XSendFileContrib
+
+**********************************************************************************************************************************
+XmlRpcContrib
+
+**********************************************************************************************************************************
+XslFoContrib
+
+**********************************************************************************************************************************
+YahooGridsAddOn
+
+**********************************************************************************************************************************
+YahooUserInterfaceContrib
+
+**********************************************************************************************************************************
+YouShallHaveNoOtherLoginsBeforeMePlugin
+
+**********************************************************************************************************************************
+YuiMenuContrib
+
+**********************************************************************************************************************************
+ZonePlugin
+
+
+Extensions that have not been published to Foswiki.org
+ActivityStreamPlugin
+AngularPlugin
+AutoSavePlugin
+AutoSubPlugin
+BaseSkin
+BibtexFormfieldPlugin
+CKEditorPlugin
+ClickToCallPlugin
+ComponentEditPlugin
+ConfigureCheckPlugin
+CpanInstallerContrib
+CrossTopicDiffPlugin
+CurrencyConverterPlugin
+DashboardContrib
+DataFlowDiaPlugin
+DateFieldPlugin
+DateTimeContrib
+DbXmlPlugin
+DoxygenPlugin
+EcoTrashPlugin
+EmptyContrib
+EmptyJQueryPlugin
+ExternalTopicViewerPlugin
+GenPDFLatexAddOn
+GitPlugin
+HTTPEngineContrib
+HighchartsPlugin
+Html5EditContrib
+IconPlugin
+ImgMapPlugin
+ImportPlugin
+InterwikiPreviewPlugin
+JEditableAddOn
+JQGanttContrib
+JQueryExtrasPlugin
+JQuerymbComponentsPlugin
+JSONEditorJQueryPlugin
+LemonLDAPNgLoginContrib
+ListFormfieldPlugin
+LogDispatchContrib
+MathJaxPlugin
+MigrationScriptsContrib
+MongoDBPlugin
+NetgrepPlugin
+NuSkin
+OAuth2Contrib
+OpenLayersPlugin
+PSGIEngineContrib
+PasswordPlugin
+PatchItem11983Contrib
+PatchItem12849Contrib
+PingBackPlugin
+PlantUMLPlugin
+PloticusPlugin
+QueryAcceleratorPlugin
+ReadWriteOfflinePlugin
+RepositoryPlugin
+RestPlugin
+S3LinkPlugin
+SectionPermissionPlugin
+SemanticLinksPlugin
+SlickSitemapContrib
+SlionSkin
+SocialFormfieldsPlugin
+SqlGridPlugin
+SsoLoginContrib
+SubversionStoreContrib
+TasksPlugin
+TestBootstrapPlugin
+TestFixturePlugin
+TinyMCECleanStickyBitsPlugin
+TinyMCEUsabilityUpgradePlugin
+TinyconPlugin
+ToPDFPlugin
+TopMenuSkin
+TopicRecursePlugin
+TopicStatsPlugin
+TopicVotePlugin
+TwitterBootstrapContrib
+UiByRestPlugin
+UnifiedAuthContrib
+WebDAVLinkPlugin
+WebsiteGalleryContrib
+WikiAppStorePlugin
+WysiwygFormfieldPlugin
+XMLStoreContrib
+XmlXslPlugin
